@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>12c.02.04 - Create your own configurator</title>
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <h1 class="site-title">Pimp your ride 🚗</h1>
+    </header>
+    <main>
+      <div class="sectionwrapper_all">
+        <div class="carSVG">
+          <img class="carSVG_part unclickable hide" src="img/car_gatling_gun.png" alt="gatlin_gun" data-feature="gun" />
+          <img class="carSVG_part unclickable hide" src="img/car_rims.png" alt="car_rims" data-feature="rims" />
+        </div>
+        <div class="selection">
+          <div class="color-wrapper">
+            <h2>Colors</h2>
+            <div class="c-color-picker js-color-picker"></div>
+          </div>
+          <div class="features">
+            <h2>Features</h2>
+            <div class="feature_wrapper">
+              <div class="feature">
+                <img src="img/small/car_gatling_gun.png" alt="gatlin_gun_feature" class="option" data-feature="gun" />
+              </div>
+              <div class="feature">
+                <img src="img/small/car_rims.png" alt="rims_feature" class="option" data-feature="rims" />
+              </div>
+              <div class="feature">
+                <img src="img/small/lips.png" alt="lips_feature" class="option" data-feature="lips" />
+              </div>
+              <div class="feature">
+                <img src="img/small/hot-rod-flames.png" alt="flames_feature" class="option" data-feature="flames" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <template class="t-color">
+      <div class="c-color-picker__color">
+        <div class="c-color-picker__color-inner"></div>
+      </div>
+    </template>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
