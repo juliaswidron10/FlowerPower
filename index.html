@@ -4,11 +4,64 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/cgv5jan.css">
     <link rel="stylesheet" href="style.css">
     <title>Flower Power</title>
 </head>
 <body>
-    
+    <nav>
+        <h1 class="logo">Flower Power</h1>
+        <ol>
+            <li><a href="index.html">Homepage</a></li>
+            <li><a href="Configurator.html">Configurator</a></li>
+            <li><a href="Get_inspired.html">Get inspired</a></li>
+        </ol>
+    </nav>
+    <section class="top">
+        <img class="topflower" src="images/flower-homepage.png" alt="image of a pink flower with long green stem" load="lazy">
+        <div class="texttop">
+            <h1>Create your own botanical poster</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, commodo consequa.</p>
+            <button>Start creating</button>
+        </div>
+        <img class="topleaf" src="images/leaves-homepage.png" alt="image of a plant with many green leaves on a thin long stem" load="lazy">
+    </section>
+    <section class="lower">
+        <h1>You can customize...</h1>
+        <div class="cofig">
+            <img class="posterexample" src="images/poster-example.jpg" alt="sample image of a postet with colorful background, flower and decorative elements">
+            
+            <div class="iconsconf" id="frametype">
+                <div class="icon"><img src="Icons/frame.svg"></div>
+                <h1>Frame type</h1>
+                <div class="framearrow"></div>
+            </div>
+
+            <div class="iconsconf" id="flowertype">
+                <div class="icon"><img src="Icons/flower.svg"></div>
+                <h1>Flower type</h1>
+                <div class="flowerarrow"></div>
+            </div>
+
+            <div class="iconsconf" id="shapetype">
+                <div class="icon"><img src="Icons/blocks.svg"></div>
+                <h1>Add Shapes</h1>
+                <div class="shapearrow"></div>
+            </div>
+
+            <div class="iconsconf" id="backgroundtype">
+                <div class="icon"><img src="Icons/color-palette.svg"></div>
+                <h1>Background Color</h1>
+                <div class="backgroundarrow"></div>
+            </div>
+
+            <div class="iconsconf" id="texttype">
+                <div class="icon"><img src="Icons/text-box.svg"></div>
+                <h1>Edit Text</h1>
+                <div class="textarrow"></div>
+            </div>
+        </div>
+    </section>
     <script src="script.js"></script>
 </body>
 </html>
