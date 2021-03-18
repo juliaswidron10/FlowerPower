@@ -5,6 +5,7 @@ window.addEventListener("DOMContentLoaded", start);
 let elementToPaint = undefined;
 
 function start() {
+  console.log("fiiiire");
   const urls = ["svg/car_config.svg", "svg/hot_rod_flames.svg", "svg/lips-01.svg"];
   urls.forEach((url) => {
     getSVG(url);

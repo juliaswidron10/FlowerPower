@@ -1,0 +1,269 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --background-color: #e2e1e0;
+  --component-color: #fff;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --border-radius: 6px;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.site-header {
+  background-color: var(--component-color);
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.site-title {
+  margin: 0;
+  padding: 2rem;
+}
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+.carSVG {
+  position: relative;
+  flex-grow: 1;
+  margin: 3rem 0;
+}
+
+.carSVG_basic {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.carSVG_part {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 0;
+  left: 0;
+}
+
+.feature_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.feature {
+  height: 90px;
+  width: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6px;
+  border: 1px solid #d9d9d9;
+  border-radius: 50%;
+  background-color: #fff;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+.feature img {
+  border: 1px solid #d9d9d9;
+  display: block;
+  height: 74px;
+  width: 74px;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+.sectionwrapper_all {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: var(--component-color);
+}
+
+.selection {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #e9e9e9;
+}
+
+.color-wrapper {
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.color-wrapper,
+.features {
+  padding: 2rem;
+}
+
+/* COLOR PICKER CSS */
+.c-color-picker {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.c-color-picker__color {
+  padding: 6px;
+  border: 1px solid #d9d9d9;
+  border-radius: 50%;
+  background-color: #fff;
+  cursor: pointer;
+  height: 90px;
+  width: 90px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--shadow);
+}
+
+.c-color-picker__color-inner {
+  height: 74px;
+  width: 74px;
+  border-radius: 50%;
+  border: 1px solid #d9d9d9;
+  transition: transform 0.3s ease-in-out;
+}
+
+.c-color-picker__color.is-active {
+  padding: 0;
+  border: none;
+}
+
+.c-color-picker__color.is-active > .c-color-picker__color-inner {
+  transform: scale(1.28);
+  border: none;
+}
+
+@media (min-width: 720px) {
+  .selection {
+    flex-direction: row;
+    border-bottom: 1px solid #e9e9e9;
+  }
+
+  .color-wrapper,
+  .features {
+    width: 50%;
+  }
+
+  .color-wrapper {
+    border-bottom: none;
+    border-right: 1px solid #e9e9e9;
+  }
+}
+
+@media (min-width: 970px) {
+  .sectionwrapper_all {
+    min-height: calc(100vh - 101px);
+  }
+
+  .carSVG {
+    align-self: center;
+  }
+
+  .selection {
+    flex-direction: column;
+    max-width: 258px;
+    border-left: 1px solid #e9e9e9;
+    border-top: none;
+    min-height: calc(100vh - 101px);
+    overflow-y: auto;
+    border-bottom: none;
+  }
+
+  .color-wrapper {
+    border: none;
+  }
+
+  .color-wrapper,
+  .features {
+    width: auto;
+  }
+}
+
+@media (min-width: 1100px) {
+  .selection {
+    max-width: 360px;
+  }
+}
+
+@media (min-width: 1230px) {
+  .selection {
+    max-width: 462px;
+  }
+}
+
+/* SVG STYLING */
+
+.shadow-layer {
+  pointer-events: none;
+}
+
+.unclickable {
+  pointer-events: none;
+}
+
+.g-to-color {
+  pointer-events: auto;
+}
+
+.g-to-color_active {
+  stroke: rgb(0, 0, 0);
+  stroke-width: 1px;
+
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  animation: dash_kf 1s linear forwards;
+}
+
+.g-to-color:hover {
+  cursor: pointer;
+}
+
+@keyframes dash_kf {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* FEATURE CSS */
+.chosen {
+  background-color: pink;
+}
+
+.hide {
+  display: none;
+}
+
+/* Animation classes */
+
+.animate-color-in {
+  /* TODO: Create animation for adding a feature */
+  --diffX: 0;
+  --diffY: 0;
+  position: absolute;
+  animation: animate-color-in_kf 1s ease-in-out;
+}
+
+@keyframes animate-color-in_kf {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  100% {
+    transform: translate(calc(var(--diffX) * 1px), calc(var(--diffY) * 1px));
+  }
+}
