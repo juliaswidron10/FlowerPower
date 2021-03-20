@@ -4,31 +4,119 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>12c.02.04 - Create your own configurator</title>
+    <title>Flower Power - Configurator</title>
 
     <!-- <link rel="stylesheet" href="css/normalize.css" /> -->
     <link rel="stylesheet" href="configuratorstyle.css" />
   </head>
   <body>
     <header class="site-header">
-      <h1 class="site-title">Pimp your ride 🚗</h1>
+      <h1 class="site-title">Configurator</h1>
     </header>
     <main>
       <div class="sectionwrapper_all">
-        <div class="carSVG">
-          <img class="carSVG_part unclickable hide" src="img/car_gatling_gun.png" alt="gatlin_gun" data-feature="gun" />
-          <img class="carSVG_part unclickable hide" src="img/car_rims.png" alt="car_rims" data-feature="rims" />
+        <div class="selection-selector">
+          <div class="selector" id="frame">
+            <img src="img/selectors/frame.svg" alt="frame_selector" data-feature="frame" />
+          </div>
+          <div class="selector" id="colors">
+            <img src="img/selectors/color-palette.svg" alt="color_selector" data-feature="colors" />
+          </div>
+          <div class="selector" id="flower">
+            <img src="img/selectors/flower.svg" alt="flower_selector" data-feature="flower" />
+          </div>
+          <div class="selector" id="text">
+            <img src="img/selectors/text-box.svg" alt="text_selector" data-feature="text" />
+          </div>
+          <div class="selector" id="shapes">
+            <img src="img/selectors/shapes.svg" alt="shapes_selector" data-feature="shapes" />
+          </div>
         </div>
+
         <div class="selection">
-          <div class="color-wrapper">
+          <div class="frame-wrapper hide">
+            <h2>Frame</h2>
+            <!-- <div class="frame-1">
+              <img src="img/small/car_gatling_gun.png" alt="gatlin_gun_feature" class="option" data-feature="frame" />
+            </div>
+            <div class="frame-2">
+              <img src="img/small/car_gatling_gun.png" alt="gatlin_gun_feature" class="option" data-feature="frame" />
+            </div> -->
+          </div>
+
+          <div class="color-wrapper hide">
             <h2>Colors</h2>
             <div class="c-color-picker js-color-picker"></div>
           </div>
-          <div class="features">
+
+          <div class="flower-wrapper hide">
+            <h2>Flower</h2>
+            <div class="flower-wrapper-1">
+              <span class="flower">
+                <img src="IMGs/flower1.png" alt="flower" class="option" data-feature="flower1" />
+                <p>Rose</p>
+              </span>
+              <span class="flower">
+                <img src="IMGs/flower2.png" alt="flower" class="option" data-feature="flower2" />
+                <p>Daffodil</p>
+              </span>
+              <span class="flower">
+                <img src="IMGs/flower3.png" alt="flower" class="option" data-feature="flower3" />
+                <p>Lily</p></span
+              >
+              <span class="flower">
+                <img src="IMGs/flower4.png" alt="flower" class="option" data-feature="flower4" />
+                <p>Daisy</p></span
+              >
+              <span class="flower">
+                <img src="IMGs/flower5.png" alt="flower" class="option" data-feature="flower5" />
+                <p>Dandelion</p></span
+              >
+            </div>
+
+            <h2>Leaf</h2>
+            <div class="flower-wrapper-2">
+              <span class="leaf">
+                <img src="IMGs/leaf1.png" alt="leaf" class="option" data-feature="leaf1" />
+                <p>Philodendron</p>
+              </span>
+              <span class="leaf">
+                <img src="IMGs/leaf2.png" alt="leaf" class="option" data-feature="leaf2" />
+                <p>Hornbeam</p>
+              </span>
+              <span class="leaf">
+                <img src="IMGs/leaf4.png" alt="leaf" class="option" data-feature="leaf4" />
+                <p>Monstera</p>
+              </span>
+            </div>
+          </div>
+          <div class="text-wrapper hide">
+            <h2>Text</h2>
+
+            <label for="lText">Large text:</label>
+            <input type="text" id="lText" name="lText" />
+
+            <label>Font:</label>
+            <div class="c-font-picker js-font-picker"></div>
+            <button id="font-save-button">Save</button>
+            <div id="textOutput" type="text" readonly="true"></div>
+          </div>
+
+          <div class="shape-wrapper hide">
+            <h2>Shapes</h2>
+            <!-- <div class="frame-1">
+              <img src="img/small/car_gatling_gun.png" alt="gatlin_gun_feature" class="option" data-feature="gun" />
+            </div>
+            <div class="frame-2">
+              <img src="img/small/car_gatling_gun.png" alt="gatlin_gun_feature" class="option" data-feature="gun" />
+            </div> -->
+          </div>
+
+          <!-- <div class="features">
             <h2>Features</h2>
             <div class="feature_wrapper">
               <div class="feature">
-                <img src="img/small/car_gatling_gun.png" alt="gatlin_gun_feature" class="option" data-feature="gun" />
+                <img src="SVGs/flower1-01.svg" alt="gatlin_gun_feature" class="option" data-feature="flower" />
               </div>
               <div class="feature">
                 <img src="img/small/car_rims.png" alt="rims_feature" class="option" data-feature="rims" />
@@ -41,13 +129,29 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
+
+        
       </div>
+      <div class="posterSVG">
+          <img class="posterSVG_part unclickable hide" src="IMGs/leaf1.png" alt="" data-feature="leaf1" />
+          <img class="posterSVG_part unclickable hide" src="IMGs/leaf2.png" alt="" data-feature="leaf2" />
+           <img class="posterSVG_part unclickable hide" src="IMGs/leaf4.png" alt="" data-feature="leaf4" />
+          <!-- <img class="carSVG_part unclickable hide" src="SVGs/flower3-01.svg" alt="gatlin_gun" data-feature="flower3" />
+          <img class="carSVG_part unclickable hide" src="SVGs/flower4-01.svg" alt="gatlin_gun" data-feature="flower4" />
+          <img class="carSVG_part unclickable hide" src="SVGs/flower5-01.svg" alt="gatlin_gun" data-feature="flower5" /> -->
+        </div>
     </main>
 
     <template class="t-color">
       <div class="c-color-picker__color">
         <div class="c-color-picker__color-inner"></div>
+      </div>
+    </template>
+
+    <template class="t-font">
+      <div class="c-font-picker__font">
+        <div class="c-font-picker__font-inner"></div>
       </div>
     </template>
 

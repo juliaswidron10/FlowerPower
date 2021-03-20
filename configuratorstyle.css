@@ -7,7 +7,7 @@
 }
 
 :root {
-  --background-color: #e2e1e0;
+  --background-color: #e6e6e6;
   --component-color: #fff;
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   --border-radius: 6px;
@@ -19,6 +19,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: var(--background-color);
 }
 
 .site-header {
@@ -35,19 +36,22 @@ h2 {
   margin-bottom: 1rem;
 }
 
-.carSVG {
+.posterSVG {
   position: relative;
   flex-grow: 1;
   margin: 3rem 0;
 }
 
-.carSVG_basic {
+.posterSVG_basic {
   display: block;
   max-width: 100%;
   height: auto;
+  z-index: 1;
+  fill: white;
 }
 
-.carSVG_part {
+.posterSVG_part {
+  fill: white;
   position: absolute;
   width: 100%;
   height: auto;
@@ -89,21 +93,29 @@ h2 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  background-color: var(--component-color);
 }
 
 .selection {
   display: flex;
   flex-direction: column;
   border-top: 1px solid #e9e9e9;
-}
-
-.color-wrapper {
-  border-bottom: 1px solid #e9e9e9;
+  padding-right: 5vw;
 }
 
 .color-wrapper,
-.features {
+.frame-wrapper,
+.flower-wrapper,
+.text-wrapper,
+.shape-wrapper {
+  border-bottom: 1px solid #e9e9e9;
+  background-color: white;
+  margin-top: 2rem;
+  padding: 1rem;
+  border-radius: 2rem;
+  width: 30vw;
+}
+
+.selection-selector {
   padding: 2rem;
 }
 
@@ -115,25 +127,28 @@ h2 {
   gap: 0.75rem;
 }
 
-.c-color-picker__color {
-  padding: 6px;
+.c-color-picker__color,
+.c-font-picker__font {
+  /* padding: 6px; */
   border: 1px solid #d9d9d9;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   background-color: #fff;
   cursor: pointer;
-  height: 90px;
-  width: 90px;
+  height: 54px;
+  width: 54px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  box-shadow: var(--shadow);
+  /* box-shadow: var(--shadow); */
+  z-index: 2;
 }
 
-.c-color-picker__color-inner {
-  height: 74px;
-  width: 74px;
-  border-radius: 50%;
+.c-color-picker__color-inner,
+.c-font-picker__font-inner {
+  height: 54px;
+  width: 54px;
+  /* border-radius: 50%; */
   border: 1px solid #d9d9d9;
   transition: transform 0.3s ease-in-out;
 }
@@ -148,7 +163,7 @@ h2 {
   border: none;
 }
 
-@media (min-width: 720px) {
+/* @media (min-width: 720px) {
   .selection {
     flex-direction: row;
     border-bottom: 1px solid #e9e9e9;
@@ -170,13 +185,13 @@ h2 {
     min-height: calc(100vh - 101px);
   }
 
-  .carSVG {
+  .posterSVG {
     align-self: center;
   }
 
   .selection {
     flex-direction: column;
-    max-width: 258px;
+    max-width: 300px;
     border-left: 1px solid #e9e9e9;
     border-top: none;
     min-height: calc(100vh - 101px);
@@ -204,7 +219,7 @@ h2 {
   .selection {
     max-width: 462px;
   }
-}
+} */
 
 /* SVG STYLING */
 
@@ -222,10 +237,10 @@ h2 {
 
 .g-to-color_active {
   stroke: rgb(0, 0, 0);
-  stroke-width: 1px;
+  stroke-width: 5px;
 
-  stroke-dasharray: 2000;
-  stroke-dashoffset: 2000;
+  /* stroke-dasharray: 2000; */
+  /* stroke-dashoffset: 2000; */
   animation: dash_kf 1s linear forwards;
 }
 
@@ -241,7 +256,7 @@ h2 {
 
 /* FEATURE CSS */
 .chosen {
-  background-color: pink;
+  background-color: grey;
 }
 
 .hide {
@@ -266,4 +281,65 @@ h2 {
   100% {
     transform: translate(calc(var(--diffX) * 1px), calc(var(--diffY) * 1px));
   }
+}
+
+/*------------ALEX CODE--------------*/
+
+.selector {
+  height: 70px;
+  width: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  /* padding: 6px; */
+  /* border: 1px solid #d9d9d9; */
+  border-radius: 50%;
+  background-color: #fff;
+  cursor: pointer;
+  /* box-shadow: var(--shadow); */
+}
+
+.selector img {
+  /* border: 1px solid #d9d9d9; */
+  padding: 6px;
+  display: block;
+  height: 54px;
+  width: 54px;
+  margin: 0 auto;
+  /* border-radius: 50%; */
+}
+
+.flower-wrapper-1 {
+  display: flex;
+}
+
+.flower .leaf {
+  width: 10vw;
+  height: 10vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.leaf img,
+.flower img {
+  width: 6vw;
+}
+
+.flower-wrapper-1,
+.flower-wrapper-2 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.posterSVG,
+.posterSVG svg,
+.posterSVG img {
+  width: 30vw;
+  height: auto;
+}
+
+#textOutput {
 }
