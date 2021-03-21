@@ -2,7 +2,8 @@
     --main-font: montserrat, sans-serif;
     --main-color: #E6E6E6;
     --secondary-color: #505050;
-    --pink: ##FFCCCE;
+    --pink: #FFCCCE;
+    --background: #A0DEDD;
 }
 
 body {
@@ -10,7 +11,7 @@ body {
     color: var(--secondary-color);
     margin: 0;
     padding: 0;
-    background-color: var(--main-color);
+    background-color: var(--background);
 }
 
 nav {
