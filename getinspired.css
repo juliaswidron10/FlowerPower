@@ -356,3 +356,28 @@ section.posters-wrapper > h1 {
 .poster5-wrapper {
   position: relative;
 }
+
+.leaf-position {
+  top: 10rem;
+  left: -3rem;
+}
+
+.flower-position {
+  top: 5rem;
+  left: 7rem;
+}
+
+.text-position {
+  top: 40rem;
+  left: 5rem;
+}
+
+.date-position {
+  top: 2rem;
+  left: 37rem;
+}
+
+.shapes-position {
+  top: 2rem;
+  left: 2rem;
+}
