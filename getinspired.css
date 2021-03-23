@@ -42,8 +42,8 @@ nav > ol > li > a {
   text-decoration: none;
   text-transform: uppercase;
 }
-
 /**** end of Julia's code ****/
+
 .intro-inspired {
   margin-top: 1rem;
   display: flex;
@@ -90,7 +90,6 @@ section.posters-wrapper > h1 {
   font-size: 3rem;
   font-weight: 100;
   margin-top: 5rem;
-  /*padding: 5rem 4rem;*/
   align-self: center;
 }
 
@@ -100,193 +99,7 @@ section.posters-wrapper > h1 {
 }
 */
 
-.posters-gallery {
-  /*display: flex;
-  flex-direction: column;*/
-  padding: 2rem 4rem;
-}
-
-/***** FIRST TRY ******/
-
-/*.posters-gallery img {
-  width: 380px;
-  height: auto;
-  margin-bottom: 5rem;
-}*/
-
-/*
-.poster1-wrapper,
-.poster3-wrapper,
-.poster5-wrapper {
-  position: relative;
-  top: 0;
-  left: 12rem;
-}
-
-.poster2-wrapper,
-.poster4-wrapper {
-  position: relative;
-  top: 0;
-  left: 40rem;
-}
-
-.poster1-elements img {
-  position: relative;
-  top: 0;
-  left: 12rem;
-}
-*/
-
-/*
-.leaf1 {
-  position: relative;
-  top: 0;
-  left: 12rem;
-  z-index: 1;
-}
-.flower1 {
-  position: relative;
-  top: 0;
-  left: 12rem;
-  z-index: 2;
-}
-
-.text1 {
-  position: relative;
-  top: 0;
-  left: 12rem;
-  z-index: 3;
-}
-
-.date1 {
-  position: relative;
-  top: 0;
-  left: 12rem;
-  z-index: 4;
-}
-
-.shapes1 {
-  position: relative;
-  top: 0;
-  left: 12rem;
-  z-index: 5;
-}
-*/
-
-/***** SECOND TRY ******/
-
-/*
-.poster1-bg {
-  position: relative;
-  top: 0;
-  right: 0;
-}
-
-.poster1-elements {
-  position: relative;
-  top: 0;
-  right: 0;
-}
-
-.leaf1 {
-  position: relative;
-  top: 0;
-  right: 0;
-  z-index: 1;
-}
-.flower1 {
-  position: relative;
-  top: 0;
-  right: 0;
-  z-index: 2;
-}
-
-.text1 {
-  position: relative;
-  top: 0;
-  right: 0;
-  z-index: 3;
-}
-
-.date1 {
-  position: relative;
-  top: 0;
-  right: 0;
-  z-index: 4;
-}
-
-.shapes1 {
-  position: relative;
-  top: 0;
-  right: 0;
-  z-index: 5;
-}
-
-/*
-.poster1-wrapper {
-  position: absolute;
-  top: 60rem;
-  right: 0;
-}
-
-.poster1-wrapper {
-  position: absolute;
-  top: 160rem;
-  right: 0;
-}
-*/
-
-/***** THIRD TRY ******/
-/*
-.poster1-bg {
-  position: absolute;
-  top: 60;
-  left: 0;
-}
-
-.poster1-elements {
-  position: relative;
-  top: 0;
-  left: 0;
-}
-
-.leaf1 {
-  position: relative;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-.flower1 {
-  position: relative;
-  top: 0;
-  left: 0;
-  z-index: 2;
-}
-
-.text1 {
-  position: relative;
-  top: 0;
-  left: 0;
-  z-index: 3;
-}
-
-.date1 {
-  position: relative;
-  top: 0;
-  left: 0;
-  z-index: 4;
-}
-
-.shapes1 {
-  position: relative;
-  top: 0;
-  left: 0;
-  z-index: 5;
-}
-*/
-
-/**** FOURTH TRY ****/
-
+/* POSTER ELEMENTS POSITIONING */
 .leaf1,
 .flower1,
 .text1,
@@ -295,6 +108,8 @@ section.posters-wrapper > h1 {
   position: absolute;
   top: 0;
   left: 0;
+  width: 380px;
+  height: auto;
 }
 
 .poster1-wrapper {
@@ -309,6 +124,8 @@ section.posters-wrapper > h1 {
   position: absolute;
   top: 0;
   left: 0;
+  width: 380px;
+  height: auto;
 }
 
 .poster2-wrapper {
@@ -323,6 +140,8 @@ section.posters-wrapper > h1 {
   position: absolute;
   top: 0;
   left: 0;
+  width: 380px;
+  height: auto;
 }
 
 .poster3-wrapper {
@@ -337,6 +156,8 @@ section.posters-wrapper > h1 {
   position: absolute;
   top: 0;
   left: 0;
+  width: 380px;
+  height: auto;
 }
 
 .poster4-wrapper {
@@ -351,6 +172,8 @@ section.posters-wrapper > h1 {
   position: absolute;
   top: 0;
   left: 0;
+  width: 380px;
+  height: auto;
 }
 
 .poster5-wrapper {
@@ -358,26 +181,49 @@ section.posters-wrapper > h1 {
 }
 
 .leaf-position {
-  top: 10rem;
-  left: -3rem;
+  top: 4rem;
+  left: -1rem;
+  width: 400px;
+  height: auto;
 }
 
 .flower-position {
-  top: 5rem;
-  left: 7rem;
+  top: 2rem;
+  left: 3rem;
+  width: 280px;
+  height: auto;
 }
 
 .text-position {
-  top: 40rem;
-  left: 5rem;
+  top: 19rem;
+  left: 2.5rem;
+  width: 300px;
+  height: auto;
 }
 
 .date-position {
-  top: 2rem;
-  left: 37rem;
+  top: 1rem;
+  left: 18rem;
+  width: 65px;
+  height: auto;
 }
 
 .shapes-position {
-  top: 2rem;
-  left: 2rem;
+  top: 1rem;
+  left: 1rem;
+  width: 340px;
+  height: auto;
+}
+
+.bg-position {
+  width: 380px;
+  height: auto;
+}
+
+.posters-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding-bottom: 3rem;
 }
