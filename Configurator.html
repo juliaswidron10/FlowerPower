@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flower Power - Configurator</title>
+
+    <!-- <link rel="stylesheet" href="css/normalize.css" /> -->
+    <link rel="stylesheet" href="configuratorstyle.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav>
+        <h1 class="logo">Flower Power</h1>
+        <ol>
+            <li><a href="index.html">Homepage</a></li>
+            <li><a href="Configurator.html">Configurator</a></li>
+            <li><a href="Get_inspired.html">Get inspired</a></li>
+        </ol>
+    </nav>
+    </header>
+    <main>
+      <div class="sectionwrapper_all">
+        <div class="selection-selector">
+          <div class="selector" id="frame">
+            <img src="img/selectors/frame.svg" alt="frame_selector" data-feature="frame" />
+          </div>
+  
+          <div class="selector" id="flower">
+            <img src="img/selectors/flower.svg" alt="flower_selector" data-feature="flower" />
+          </div>
+          <div class="selector" id="text">
+            <img src="img/selectors/text-box.svg" alt="text_selector" data-feature="text" />
+          </div>
+          <div class="selector" id="shapes">
+            <img src="img/selectors/shapes.svg" alt="shapes_selector" data-feature="shapes" />
+          </div>
+                  <div class="selector" id="colors">
+            <img src="img/selectors/color-palette.svg" alt="color_selector" data-feature="colors" />
+          </div>
+        </div>
+
+        <div class="selection">
+          <div class="frame-wrapper hide">
+            <h2>Frame</h2>
+            <div class="frames-wrapper">
+            <div class="frame">
+              <img src="IMGs/frame1.png" alt="" class="option" data-feature="frame1" />
+            </div>
+          <div class="frame">
+              <img src="IMGs/frame2.png" alt="" class="option" data-feature="frame2" />
+            </div>
+             <div class="frame">
+              <img src="IMGs/frame3.png" alt="" class="option" data-feature="frame3" />
+            </div>
+             <div class="frame">
+              <img src="IMGs/frame4.png" alt="" class="option" data-feature="frame4" />
+            </div>
+             <div class="frame">
+              <img src="IMGs/frame5.png" alt="" class="option" data-feature="frame5" />
+            </div>
+            </div>
+          </div>
+
+          <div class="color-wrapper hide">
+            <h2>Colors</h2>
+            <h5>Background colors</h5>
+            <div class="c-color-picker js-color-picker"></div>
+              <h5>Petal colors</h5>
+            <div class="c-color-picker2 js-color-picker2"></div>
+               <h5>Stem colors</h5>
+            <div class="c-color-picker3 js-color-picker3"></div>
+          </div>
+
+          <div class="flower-wrapper hide">
+            <h2>Flower</h2>
+            <div class="flower-wrapper-1">
+              <span class="flower">
+                <img src="IMGs/flower1.png" alt="flower" class="option"  value="value1" id="option1" data-feature="flower1"  />
+                <p>Rose</p>
+              </span>
+              <span class="flower">
+                <img src="IMGs/flower2.png" alt="flower" class="option"  value="value1" id="option2" data-feature="flower2" />
+                <p>Daffodil</p>
+              </span>
+              <span class="flower">
+                <img src="IMGs/flower3.png" alt="flower" class="option"  value="value1" id="option3" data-feature="flower3" />
+                <p>Lily</p></span
+              >
+              <span class="flower">
+                <img src="IMGs/flower4.png" alt="flower" class="option"  value="value1" id="option4" data-feature="flower4" />
+                <p>Daisy</p></span
+              >
+              <span class="flower">
+                <img src="IMGs/flower5.png" alt="flower" class="option"  value="value1" id="option5" data-feature="flower5" />
+                <p>Dandelion</p></span
+              >
+            </div>
+
+            <h2>Leaf</h2>
+            <div class="flower-wrapper-2">
+              <span class="leaf">
+                <img src="IMGs/leaf1.png" alt="leaf" class="option" data-feature="leaf1" />
+                <p>Philodendron</p>
+              </span>
+              <span class="leaf">
+                <img src="IMGs/leaf2.png" alt="leaf" class="option" data-feature="leaf2" />
+                <p>Hornbeam</p>
+              </span>
+              <span class="leaf">
+                <img src="IMGs/leaf4.png" alt="leaf" class="option" data-feature="leaf4" />
+                <p>Monstera</p>
+              </span>
+            </div>
+          </div>
+          <div class="text-wrapper hide">
+            <h2>Edit Text on your poster!</h2>
+            <form onsubmit="textSaved()" class="text-form">
+            <label for="pickmonth">Month:</label>
+            <input type="text" maxlength="4" id="pickmonth" name="pickmonth" placeholder="FEB" />
+            <label for="pickday">Day:</label>
+            <input type="text" maxlength="2" id="pickday" name="pickday" placeholder="23" />
+            <label for="pickquote">Pick your Quote:</label>
+            <input type="text" maxlength="200" id="pickquote" name="pickquote" placeholder="Change the world by being yourself." />
+            <label for="picklong">Pick your text:</label>
+            <input type="text" maxlength="600" id="picklong" name="picklong" placeholder="Lorem ipsum dolor sit amet..." />
+
+            <label>Font:</label>
+            <select name="fonts" id="fonts">
+            </select>
+            <input type="submit" value="Submit" id="submitfont" >
+          </form>
+          </div>
+          
+          <div class="shape-wrapper hide">
+            <h2>Shapes</h2>
+            <!-- <div class="frame-1">
+              <img src="img/small/car_gatling_gun.png" alt="gatlin_gun_feature" class="option" data-feature="gun" />
+            </div>
+            <div class="frame-2">
+              <img src="img/small/car_gatling_gun.png" alt="gatlin_gun_feature" class="option" data-feature="gun" />
+            </div> -->
+          </div>
+
+          <!-- <div class="features">
+            <h2>Features</h2>
+            <div class="feature_wrapper">
+              <div class="feature">
+                <img src="SVGs/flower1-01.svg" alt="gatlin_gun_feature" class="option" data-feature="flower" />
+              </div>
+              <div class="feature">
+                <img src="img/small/car_rims.png" alt="rims_feature" class="option" data-feature="rims" />
+              </div>
+              <div class="feature">
+                <img src="img/small/lips.png" alt="lips_feature" class="option" data-feature="lips" />
+              </div>
+              <div class="feature">
+                <img src="img/small/hot-rod-flames.png" alt="flames_feature" class="option" data-feature="flames" />
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+        </div>
+      </div>
+      <div class="posterSVG">
+        <div class="text-container">
+          <h1 id="textday">23</h1>
+          <h2 id="textmonth">FEB</h2>
+          <h3 id="textquote">Change the world by being yourself.</h3>
+          <p id="textlong">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, commodo consequa.</p>
+        </div>
+                <img class="posterSVG_part unclickable hide" src="IMGs/frame1.png" alt="" data-feature="frame1" />
+                    <img class="posterSVG_part unclickable hide" src="IMGs/frame2.png" alt="" data-feature="frame2" />
+            <img class="posterSVG_part unclickable hide" src="IMGs/frame3.png" alt="" data-feature="frame3" />
+            <img class="posterSVG_part unclickable hide" src="IMGs/frame4.png" alt="" data-feature="frame4" />
+            <img class="posterSVG_part unclickable hide" src="IMGs/frame5.png" alt="" data-feature="frame5" />
+          <img class="posterSVG_part small unclickable hide" src="IMGs/leaf1.png" alt="" data-feature="leaf1" />
+          <img class="posterSVG_part small unclickable hide" src="IMGs/leaf2.png" alt="" data-feature="leaf2" />
+           <img class="posterSVG_part small unclickable hide" src="IMGs/leaf4.png" alt="" data-feature="leaf4" />
+        </div>
+    </main>
+
+    <template class="t-color">
+      <div class="c-color-picker__color">
+        <div class="c-color-picker__color-inner"></div>
+      </div>
+    </template>
+
+      <template class="t-color2">
+      <div class="c-color-picker__color2">
+        <div class="c-color-picker__color-inner2"></div>
+      </div>
+    </template>
+
+        <template class="t-color3">
+      <div class="c-color-picker__color3">
+        <div class="c-color-picker__color-inner3"></div>
+      </div>
+    </template>
+
+    <!-- <template class="t-font">
+      <div class="c-font-picker__font">
+        <div class="c-font-picker__font-inner"></div>
+      </div>
+    </template> -->
+
+    <script src="configuratorscript.js"></script>
+  </body>
+</html>
