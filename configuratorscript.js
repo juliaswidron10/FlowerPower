@@ -321,7 +321,7 @@ function colorButtons() {
   }
 }
 
-//car coloring
+// coloring
 function colorElements() {
   const groups = document.querySelectorAll(".g-to-color");
   console.log(groups);
@@ -385,7 +385,7 @@ function color2Buttons() {
     const clickedColorButtonInner = clickedColorButton.querySelector(".c-color-picker__color-inner2");
 
     if (elementToPaint === undefined) {
-      console.log("no car part chosen");
+      console.log("no element is chosen");
     } else {
       const start = clickedColorButtonInner.getBoundingClientRect();
       const end = elementToPaint.getBoundingClientRect();
@@ -463,7 +463,7 @@ function color3Buttons() {
     const clickedColorButtonInner = clickedColorButton.querySelector(".c-color-picker__color-inner3");
 
     if (elementToPaint === undefined) {
-      console.log("no car part chosen");
+      console.log("no element is chosen");
     } else {
       const start = clickedColorButtonInner.getBoundingClientRect();
       const end = elementToPaint.getBoundingClientRect();
@@ -504,7 +504,7 @@ function color3Buttons() {
   }
 }
 
-//car coloring
+// coloring
 // function colorElements() {
 //   const groups = document.querySelectorAll(".g-to-color");
 //   console.log(groups);
@@ -548,9 +548,26 @@ const features = {
 
 function featureButtons() {
   document.querySelectorAll(".option").forEach((option) => option.addEventListener("click", toggleOption));
+  // document.querySelectorAll(".option").forEach((id) => id.addEventListener("click", selectOnlyOne(id)));
 }
 
+// selectOnlyOne();
+
+// function selectOnlyThis(id) {
+//   console.log("megy?");
+//   for (var i = 1; i <= 5; i++) {
+//     document.getElementById("option" + i).selected = false;
+//     if (document.getElementById("option" + i).selected === false) {
+//       document.getElementById("option" + i).classList.add("hide");
+//     } else {
+//       document.getElementById("option" + i).classList.remove("hide");
+//     }
+//   }
+//   document.getElementById(id).selected = true;
+// }
+
 function toggleOption(event) {
+  console.group("togggle");
   const target = event.currentTarget;
   const feature = target.dataset.feature;
 
@@ -564,6 +581,7 @@ function toggleOption(event) {
 
     // If feature is (now) turned on:
     target.classList.add("chosen");
+
     // - un-hide the feature-layer(s) in the #product-preview;
     console.log(`.posterSVG [data-feature=${feature}]`);
     document.querySelector(`.posterSVG [data-feature=${feature}]`).classList.remove("hide");
