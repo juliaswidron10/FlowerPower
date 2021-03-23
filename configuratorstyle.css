@@ -36,29 +36,6 @@ h2 {
   margin-bottom: 1rem;
 }
 
-.posterSVG {
-  position: relative;
-  flex-grow: 1;
-  margin: 3rem 0;
-}
-
-.posterSVG_basic {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  z-index: 1;
-  fill: white;
-}
-
-.posterSVG_part {
-  fill: white;
-  position: absolute;
-  width: 100%;
-  height: auto;
-  top: 0;
-  left: 0;
-}
-
 .feature_wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -120,7 +97,9 @@ h2 {
 }
 
 /* COLOR PICKER CSS */
-.c-color-picker {
+.c-color-picker,
+.c-color-picker2,
+.c-color-picker3 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -128,6 +107,8 @@ h2 {
 }
 
 .c-color-picker__color,
+.c-color-picker__color2,
+.c-color-picker__color3,
 .c-font-picker__font {
   /* padding: 6px; */
   border: 1px solid #d9d9d9;
@@ -145,6 +126,8 @@ h2 {
 }
 
 .c-color-picker__color-inner,
+.c-color-picker__color-inner2,
+.c-color-picker__color-inner3,
 .c-font-picker__font-inner {
   height: 54px;
   width: 54px;
@@ -153,7 +136,7 @@ h2 {
   transition: transform 0.3s ease-in-out;
 }
 
-.c-color-picker__color.is-active {
+/* .c-color-picker__color.is-active, .c-color-picker__color2.is-active  {
   padding: 0;
   border: none;
 }
@@ -161,7 +144,7 @@ h2 {
 .c-color-picker__color.is-active > .c-color-picker__color-inner {
   transform: scale(1.28);
   border: none;
-}
+} */
 
 /* @media (min-width: 720px) {
   .selection {
@@ -231,6 +214,10 @@ h2 {
   pointer-events: none;
 }
 
+/* .clickable {
+  pointer-events: stroke;
+} */
+
 .g-to-color {
   pointer-events: auto;
 }
@@ -238,6 +225,7 @@ h2 {
 .g-to-color_active {
   stroke: rgb(0, 0, 0);
   stroke-width: 5px;
+  filter: brightness(0.5);
 
   /* stroke-dasharray: 2000; */
   /* stroke-dashoffset: 2000; */
@@ -315,7 +303,9 @@ h2 {
   display: flex;
 }
 
-.flower .leaf {
+.flower,
+.leaf,
+.frame {
   width: 10vw;
   height: 10vw;
   display: flex;
@@ -324,22 +314,64 @@ h2 {
 }
 
 .leaf img,
-.flower img {
+.flower img,
+.frame img {
   width: 6vw;
 }
 
 .flower-wrapper-1,
-.flower-wrapper-2 {
+.flower-wrapper-2,
+.frames-wrapper {
   display: flex;
   flex-wrap: wrap;
 }
 
-.posterSVG,
-.posterSVG svg,
+.posterSVG {
+  position: relative;
+  flex-grow: 1;
+  margin: 3rem 0;
+}
+
+.posterSVG_basic {
+  display: block;
+  /* max-width: 100%;
+  height: auto; */
+  z-index: -1;
+  fill: white;
+
+  width: 20vw;
+  height: auto;
+}
+
+.posterSVG_part {
+  z-index: 1;
+  fill: white;
+  position: absolute;
+  /* width: 100%;
+  height: auto; */
+  top: 0;
+  left: 0;
+
+  width: 20vw;
+  height: auto;
+}
+
+.small {
+  width: 15vw;
+  height: auto;
+  margin-left: 5%;
+  margin-top: 5%;
+}
+
+/* .posterSVG,
 .posterSVG img {
   width: 30vw;
   height: auto;
-}
+} */
+
+/* .posterSVG svg {
+  width: 25vw;
+} */
 
 #textOutput {
 }

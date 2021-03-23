@@ -19,9 +19,7 @@
           <div class="selector" id="frame">
             <img src="img/selectors/frame.svg" alt="frame_selector" data-feature="frame" />
           </div>
-          <div class="selector" id="colors">
-            <img src="img/selectors/color-palette.svg" alt="color_selector" data-feature="colors" />
-          </div>
+  
           <div class="selector" id="flower">
             <img src="img/selectors/flower.svg" alt="flower_selector" data-feature="flower" />
           </div>
@@ -31,22 +29,41 @@
           <div class="selector" id="shapes">
             <img src="img/selectors/shapes.svg" alt="shapes_selector" data-feature="shapes" />
           </div>
+                  <div class="selector" id="colors">
+            <img src="img/selectors/color-palette.svg" alt="color_selector" data-feature="colors" />
+          </div>
         </div>
 
         <div class="selection">
           <div class="frame-wrapper hide">
             <h2>Frame</h2>
-            <!-- <div class="frame-1">
-              <img src="img/small/car_gatling_gun.png" alt="gatlin_gun_feature" class="option" data-feature="frame" />
+            <div class="frames-wrapper">
+            <div class="frame">
+              <img src="IMGs/frame1.png" alt="" class="option" data-feature="frame1" />
             </div>
-            <div class="frame-2">
-              <img src="img/small/car_gatling_gun.png" alt="gatlin_gun_feature" class="option" data-feature="frame" />
-            </div> -->
+          <div class="frame">
+              <img src="IMGs/frame2.png" alt="" class="option" data-feature="frame2" />
+            </div>
+             <div class="frame">
+              <img src="IMGs/frame3.png" alt="" class="option" data-feature="frame3" />
+            </div>
+             <div class="frame">
+              <img src="IMGs/frame4.png" alt="" class="option" data-feature="frame4" />
+            </div>
+             <div class="frame">
+              <img src="IMGs/frame5.png" alt="" class="option" data-feature="frame5" />
+            </div>
+            </div>
           </div>
 
           <div class="color-wrapper hide">
             <h2>Colors</h2>
+            <h5>Background colors</h5>
             <div class="c-color-picker js-color-picker"></div>
+              <h5>Petal colors</h5>
+            <div class="c-color-picker2 js-color-picker2"></div>
+               <h5>Stem colors</h5>
+            <div class="c-color-picker3 js-color-picker3"></div>
           </div>
 
           <div class="flower-wrapper hide">
@@ -134,18 +151,34 @@
         
       </div>
       <div class="posterSVG">
-          <img class="posterSVG_part unclickable hide" src="IMGs/leaf1.png" alt="" data-feature="leaf1" />
-          <img class="posterSVG_part unclickable hide" src="IMGs/leaf2.png" alt="" data-feature="leaf2" />
-           <img class="posterSVG_part unclickable hide" src="IMGs/leaf4.png" alt="" data-feature="leaf4" />
-          <!-- <img class="carSVG_part unclickable hide" src="SVGs/flower3-01.svg" alt="gatlin_gun" data-feature="flower3" />
-          <img class="carSVG_part unclickable hide" src="SVGs/flower4-01.svg" alt="gatlin_gun" data-feature="flower4" />
-          <img class="carSVG_part unclickable hide" src="SVGs/flower5-01.svg" alt="gatlin_gun" data-feature="flower5" /> -->
+                <img class="posterSVG_part unclickable hide" src="IMGs/frame1.png" alt="" data-feature="frame1" />
+                    <img class="posterSVG_part unclickable hide" src="IMGs/frame2.png" alt="" data-feature="frame2" />
+            <img class="posterSVG_part unclickable hide" src="IMGs/frame3.png" alt="" data-feature="frame3" />
+            <img class="posterSVG_part unclickable hide" src="IMGs/frame4.png" alt="" data-feature="frame4" />
+            <img class="posterSVG_part unclickable hide" src="IMGs/frame5.png" alt="" data-feature="frame5" />
+          <img class="posterSVG_part small unclickable hide" src="IMGs/leaf1.png" alt="" data-feature="leaf1" />
+          <img class="posterSVG_part small unclickable hide" src="IMGs/leaf2.png" alt="" data-feature="leaf2" />
+           <img class="posterSVG_part small unclickable hide" src="IMGs/leaf4.png" alt="" data-feature="leaf4" />
+    
+        
         </div>
     </main>
 
     <template class="t-color">
       <div class="c-color-picker__color">
         <div class="c-color-picker__color-inner"></div>
+      </div>
+    </template>
+
+      <template class="t-color2">
+      <div class="c-color-picker__color2">
+        <div class="c-color-picker__color-inner2"></div>
+      </div>
+    </template>
+
+        <template class="t-color3">
+      <div class="c-color-picker__color3">
+        <div class="c-color-picker__color-inner3"></div>
       </div>
     </template>
 

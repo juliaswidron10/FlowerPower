@@ -22,6 +22,8 @@ function start() {
   // getSVG(url);
 
   colorButtons();
+  color2Buttons();
+  color3Buttons();
   fontButtons();
   featureButtons();
 }
@@ -134,11 +136,17 @@ const settings = {
     "#7B7B7B",
   ],
 
+  colors2: ["#629594", "#7D8BB1", "#7B7B7B"],
+
+  colors3: ["#A0DEDD", "#FFC9CD", "#C7CFE4", "#FFD5AF"],
+
   fonts: ["Arial", "Montserrat"],
 };
 
 const templates = {
   colorItem: document.querySelector(".t-color").content,
+  colorItem2: document.querySelector(".t-color2").content,
+  colorItem3: document.querySelector(".t-color3").content,
   fontItem: document.querySelector(".t-font").content,
 };
 
@@ -272,7 +280,7 @@ function colorButtons() {
     const clickedColorButtonInner = clickedColorButton.querySelector(".c-color-picker__color-inner");
 
     if (elementToPaint === undefined) {
-      console.log("no car part chosen");
+      alert("In order to color your poster, select an element first! ;)");
     } else {
       const start = clickedColorButtonInner.getBoundingClientRect();
       const end = elementToPaint.getBoundingClientRect();
@@ -339,6 +347,189 @@ function colorElements() {
     }
   });
 }
+
+function color2Buttons() {
+  showColor2Buttons();
+  startColor2Buttons();
+
+  function showColor2Buttons() {
+    const colorPicker = document.querySelector(".js-color-picker2");
+    const templateColor = templates.colorItem2;
+
+    settings.colors2.forEach((color) => {
+      const clone = templateColor.cloneNode(true);
+
+      clone.querySelector(".c-color-picker__color2").setAttribute("data-color", color);
+      clone.querySelector(".c-color-picker__color-inner2").style.backgroundColor = color;
+
+      if (color === settings.pickedColor) {
+        clone.querySelector(".c-color-picker__color2").classList.add("is-active");
+      }
+
+      colorPicker.appendChild(clone);
+    });
+  }
+
+  function startColor2Buttons() {
+    const colorButtons = document.querySelectorAll(".c-color-picker__color2");
+
+    colorButtons.forEach((colorButton) => {
+      colorButton.addEventListener("click", clickColor2);
+    });
+  }
+
+  function clickColor2() {
+    const clickedColorButton = this;
+    console.log(clickedColorButton.dataset.color);
+    console.log("clicked button", clickedColorButton);
+    const clickedColorButtonInner = clickedColorButton.querySelector(".c-color-picker__color-inner2");
+
+    if (elementToPaint === undefined) {
+      console.log("no car part chosen");
+    } else {
+      const start = clickedColorButtonInner.getBoundingClientRect();
+      const end = elementToPaint.getBoundingClientRect();
+
+      const elementHeight = end.height / 2;
+      console.log(elementHeight);
+
+      const elementWidth = end.width / 2;
+
+      const diffX = end.x - start.x + elementWidth;
+      console.log(diffX);
+      const diffY = end.y - start.y + elementHeight;
+      console.log(diffY);
+
+      clickedColorButtonInner.style.setProperty("--diffX", diffX);
+      clickedColorButtonInner.style.setProperty("--diffY", diffY);
+      clickedColorButtonInner.classList.add("animate-color-in");
+
+      clickedColorButtonInner.addEventListener("animationend", animateColor2);
+      // TODO:
+      // document.querySelector(".c-color-picker__color").classList.add("animate-color-scale");
+
+      function animateColor2() {
+        clickedColorButtonInner.classList.remove("animate-color-in");
+        clickedColorButtonInner.removeEventListener("animationend", animateColor2);
+        elementToPaint.style.fill = clickedColorButton.dataset.color;
+      }
+    }
+
+    settings.pickedColor = clickedColorButton.dataset.color;
+
+    // TODO:
+    // const findLatestClickedColor = document.querySelector(".c-color-picker__color.is-active");
+    // if (findLatestClickedColor) {
+    //     findLatestClickedColor.classList.remove("is-active");
+    // }
+    // clickedColorButton.classList.add("is-active");
+  }
+}
+
+function color3Buttons() {
+  showColor3Buttons();
+  startColor3Buttons();
+
+  function showColor3Buttons() {
+    const colorPicker = document.querySelector(".js-color-picker3");
+    const templateColor = templates.colorItem3;
+
+    settings.colors3.forEach((color) => {
+      const clone = templateColor.cloneNode(true);
+
+      clone.querySelector(".c-color-picker__color3").setAttribute("data-color", color);
+      clone.querySelector(".c-color-picker__color-inner3").style.backgroundColor = color;
+
+      if (color === settings.pickedColor) {
+        clone.querySelector(".c-color-picker__color3").classList.add("is-active");
+      }
+
+      colorPicker.appendChild(clone);
+    });
+  }
+
+  function startColor3Buttons() {
+    const colorButtons = document.querySelectorAll(".c-color-picker__color3");
+
+    colorButtons.forEach((colorButton) => {
+      colorButton.addEventListener("click", clickColor3);
+    });
+  }
+
+  function clickColor3() {
+    const clickedColorButton = this;
+    console.log(clickedColorButton.dataset.color);
+    console.log("clicked button", clickedColorButton);
+    const clickedColorButtonInner = clickedColorButton.querySelector(".c-color-picker__color-inner3");
+
+    if (elementToPaint === undefined) {
+      console.log("no car part chosen");
+    } else {
+      const start = clickedColorButtonInner.getBoundingClientRect();
+      const end = elementToPaint.getBoundingClientRect();
+
+      const elementHeight = end.height / 3;
+      console.log(elementHeight);
+
+      const elementWidth = end.width / 3;
+
+      const diffX = end.x - start.x + elementWidth;
+      console.log(diffX);
+      const diffY = end.y - start.y + elementHeight;
+      console.log(diffY);
+
+      clickedColorButtonInner.style.setProperty("--diffX", diffX);
+      clickedColorButtonInner.style.setProperty("--diffY", diffY);
+      clickedColorButtonInner.classList.add("animate-color-in");
+
+      clickedColorButtonInner.addEventListener("animationend", animateColor3);
+      // TODO:
+      // document.querySelector(".c-color-picker__color").classList.add("animate-color-scale");
+
+      function animateColor3() {
+        clickedColorButtonInner.classList.remove("animate-color-in");
+        clickedColorButtonInner.removeEventListener("animationend", animateColor3);
+        elementToPaint.style.fill = clickedColorButton.dataset.color;
+      }
+    }
+
+    settings.pickedColor = clickedColorButton.dataset.color;
+
+    // TODO:
+    // const findLatestClickedColor = document.querySelector(".c-color-picker__color.is-active");
+    // if (findLatestClickedColor) {
+    //     findLatestClickedColor.classList.remove("is-active");
+    // }
+    // clickedColorButton.classList.add("is-active");
+  }
+}
+
+//car coloring
+// function colorElements() {
+//   const groups = document.querySelectorAll(".g-to-color");
+//   console.log(groups);
+//   groups.forEach((group) => {
+//     group.addEventListener("click", storeElement);
+//     // group.style.fill = "#fff";
+
+//     function storeElement() {
+//       groups.forEach((group) => {
+//         group.classList.remove("g-to-color_active");
+//       });
+//       elementToPaint = group;
+//       group.classList.add("g-to-color_active");
+//       group.addEventListener("click", toggleActive);
+
+//       console.log(group);
+//     }
+
+//     function toggleActive() {
+//       group.classList.remove("g-to-color_active");
+//       group.removeEventListener("click", toggleActive);
+//       elementToPaint = undefined;
+//     }
+//   });
+// }
 
 // //----------FEATURE FUNCTION---------------
 // // The model of all features
