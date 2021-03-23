@@ -1,0 +1,358 @@
+/**** from Julia's code ****/
+
+:root {
+  --main-font: montserrat, sans-serif;
+  --main-color: #e6e6e6;
+  --secondary-color: #505050;
+  --pink: ##ffccce;
+}
+
+body {
+  font-family: var(--main-font);
+  color: var(--secondary-color);
+  margin: 0;
+  padding: 0;
+  background-color: var(--main-color);
+}
+
+nav {
+  display: flex;
+  width: 90%;
+  padding: 2rem 4rem 0 4rem;
+}
+
+nav > h1 {
+  font-size: 2rem;
+}
+
+nav > ol {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin-left: auto;
+  /* margin-right: 5rem; */
+}
+
+nav > ol > li {
+  padding: 0 20px;
+}
+
+nav > ol > li > a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/**** end of Julia's code ****/
+.intro-inspired {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.mockup-inspired {
+  width: 700px;
+  height: auto;
+  /*position: relative;
+  top: 0;
+  right: -2rem;*/
+}
+
+.text-inspired {
+  /*max-width: 43vw;
+  align-self: center;
+  justify-self: center;*/
+  padding: 4rem;
+}
+
+section.intro-inspired > div.text-inspired > h1 {
+  font-size: 3rem;
+  font-weight: 100;
+  margin: 0;
+}
+
+button {
+  border: none;
+  background-color: var(--secondary-color);
+  color: var(--main-color);
+  border-radius: 0;
+  margin: 2rem 0;
+  padding: 10px 15px;
+  font-size: 1.4rem;
+}
+
+.posters-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+section.posters-wrapper > h1 {
+  font-size: 3rem;
+  font-weight: 100;
+  margin-top: 5rem;
+  /*padding: 5rem 4rem;*/
+  align-self: center;
+}
+
+/*
+.hidden {
+  display: none;
+}
+*/
+
+.posters-gallery {
+  /*display: flex;
+  flex-direction: column;*/
+  padding: 2rem 4rem;
+}
+
+/***** FIRST TRY ******/
+
+/*.posters-gallery img {
+  width: 380px;
+  height: auto;
+  margin-bottom: 5rem;
+}*/
+
+/*
+.poster1-wrapper,
+.poster3-wrapper,
+.poster5-wrapper {
+  position: relative;
+  top: 0;
+  left: 12rem;
+}
+
+.poster2-wrapper,
+.poster4-wrapper {
+  position: relative;
+  top: 0;
+  left: 40rem;
+}
+
+.poster1-elements img {
+  position: relative;
+  top: 0;
+  left: 12rem;
+}
+*/
+
+/*
+.leaf1 {
+  position: relative;
+  top: 0;
+  left: 12rem;
+  z-index: 1;
+}
+.flower1 {
+  position: relative;
+  top: 0;
+  left: 12rem;
+  z-index: 2;
+}
+
+.text1 {
+  position: relative;
+  top: 0;
+  left: 12rem;
+  z-index: 3;
+}
+
+.date1 {
+  position: relative;
+  top: 0;
+  left: 12rem;
+  z-index: 4;
+}
+
+.shapes1 {
+  position: relative;
+  top: 0;
+  left: 12rem;
+  z-index: 5;
+}
+*/
+
+/***** SECOND TRY ******/
+
+/*
+.poster1-bg {
+  position: relative;
+  top: 0;
+  right: 0;
+}
+
+.poster1-elements {
+  position: relative;
+  top: 0;
+  right: 0;
+}
+
+.leaf1 {
+  position: relative;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+.flower1 {
+  position: relative;
+  top: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.text1 {
+  position: relative;
+  top: 0;
+  right: 0;
+  z-index: 3;
+}
+
+.date1 {
+  position: relative;
+  top: 0;
+  right: 0;
+  z-index: 4;
+}
+
+.shapes1 {
+  position: relative;
+  top: 0;
+  right: 0;
+  z-index: 5;
+}
+
+/*
+.poster1-wrapper {
+  position: absolute;
+  top: 60rem;
+  right: 0;
+}
+
+.poster1-wrapper {
+  position: absolute;
+  top: 160rem;
+  right: 0;
+}
+*/
+
+/***** THIRD TRY ******/
+/*
+.poster1-bg {
+  position: absolute;
+  top: 60;
+  left: 0;
+}
+
+.poster1-elements {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.leaf1 {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.flower1 {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.text1 {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.date1 {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 4;
+}
+
+.shapes1 {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+*/
+
+/**** FOURTH TRY ****/
+
+.leaf1,
+.flower1,
+.text1,
+.date1,
+.shapes1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.poster1-wrapper {
+  position: relative;
+}
+
+.leaf2,
+.flower2,
+.text2,
+.date2,
+.shapes2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.poster2-wrapper {
+  position: relative;
+}
+
+.leaf3,
+.flower3,
+.text3,
+.date3,
+.shapes3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.poster3-wrapper {
+  position: relative;
+}
+
+.leaf4,
+.flower4,
+.text4,
+.date4,
+.shapes4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.poster4-wrapper {
+  position: relative;
+}
+
+.leaf5,
+.flower5,
+.text5,
+.date5,
+.shapes5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.poster5-wrapper {
+  position: relative;
+}
