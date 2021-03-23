@@ -93,12 +93,6 @@ section.posters-wrapper > h1 {
   align-self: center;
 }
 
-/*
-.hidden {
-  display: none;
-}
-*/
-
 /* POSTER ELEMENTS POSITIONING */
 .leaf1,
 .flower1,
@@ -227,3 +221,9 @@ section.posters-wrapper > h1 {
   gap: 3rem;
   padding-bottom: 3rem;
 }
+
+/*
+.hidden {
+  display: none;
+}
+*/
