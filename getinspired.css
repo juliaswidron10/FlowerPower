@@ -179,6 +179,7 @@ section.posters-wrapper > h1 {
   left: -1rem;
   width: 400px;
   height: auto;
+  z-index: 1;
 }
 
 .flower-position {
@@ -186,6 +187,7 @@ section.posters-wrapper > h1 {
   left: 3rem;
   width: 280px;
   height: auto;
+  z-index: 2;
 }
 
 .text-position {
@@ -193,6 +195,7 @@ section.posters-wrapper > h1 {
   left: 2.5rem;
   width: 300px;
   height: auto;
+  z-index: 3;
 }
 
 .date-position {
@@ -200,6 +203,7 @@ section.posters-wrapper > h1 {
   left: 18rem;
   width: 65px;
   height: auto;
+  z-index: 4;
 }
 
 .shapes-position {
@@ -207,11 +211,13 @@ section.posters-wrapper > h1 {
   left: 1rem;
   width: 340px;
   height: auto;
+  z-index: 5;
 }
 
 .bg-position {
   width: 380px;
   height: auto;
+  z-index: 0;
 }
 
 .posters-gallery {
