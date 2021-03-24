@@ -535,14 +535,8 @@ function color3Buttons() {
 // // The model of all features
 const features = {
   frame: false,
-  flower1: false,
-  flower2: false,
-  flower3: false,
-  flower4: false,
-  flower5: false,
-  leaf1: false,
-  leaf2: false,
-  leaf3: false,
+  flower: false,
+  leaf: false,
   shape: false,
 };
 
