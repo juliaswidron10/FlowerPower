@@ -1,11 +1,36 @@
-let tl = gsap.timeline({
+//HEADER ANIMATIONS
+
+let tl1 = gsap.timeline({
+  defaults: {
+      duration: 1
+  }
+});
+
+tl1 .from('.text-inspired', {
+      opacity: 0,
+      duration: 0.75,
+      y: 300,
+      ease: 'Power1.easein',
+      delay: 0.2
+  }, "-=.4")
+ .from('.mockup-inspired', {
+    opacity: 0,
+    duration: 0.75,
+    x: 300,
+    ease: 'Power1.easein',
+    //delay: 0.2
+}, "-=.4");
+
+
+//POSTER ELEMENTS ANIMATIONS
+let tl2 = gsap.timeline({
     scrollTrigger: {
         trigger: '.bg-position',
         start: "center bottom"
     }
 });
 
-tl.from(".leaf1", {x: 200, opacity: 0, duration: 0.6})
+tl2.from(".leaf1", {x: 200, opacity: 0, duration: 0.6})
   .from(".flower1", {y: 300, opacity: 0, duration: 0.6})
   .from(".text1", {x: -200, opacity: 0, duration: 0.6})
   .from(".date1", {y: -300, opacity: 0, duration: 0.6})
