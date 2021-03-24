@@ -94,6 +94,15 @@ section.posters-wrapper > h1 {
 }
 
 /* POSTER ELEMENTS POSITIONING */
+.posters-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10rem;
+  padding-bottom: 10rem;
+  padding-top: 5rem;
+}
+
 .leaf1,
 .flower1,
 .text1,
@@ -220,12 +229,57 @@ section.posters-wrapper > h1 {
   z-index: 0;
 }
 
-.posters-gallery {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3rem;
-  padding-bottom: 3rem;
+/*.frame-position {
+  top: -2rem;
+  left: -2rem;
+  width: 440px;
+  height: auto;
+  z-index: -1;
+}*/
+
+.frame1 {
+  position: absolute;
+  top: -2rem;
+  left: -2rem;
+  width: 445px;
+  height: auto;
+  z-index: -1;
+}
+
+.frame2 {
+  position: absolute;
+  top: -3rem;
+  left: -3rem;
+  width: 475px;
+  height: auto;
+  z-index: -1;
+}
+
+.frame3 {
+  position: absolute;
+  top: -2.2rem;
+  left: -2.3rem;
+  width: 456px;
+  height: auto;
+  z-index: -1;
+}
+
+.frame4 {
+  position: absolute;
+  top: -1.3rem;
+  left: -1.2rem;
+  width: 420px;
+  height: auto;
+  z-index: -1;
+}
+
+.frame5 {
+  position: absolute;
+  top: -3.5rem;
+  left: -3.5rem;
+  width: 492px;
+  height: auto;
+  z-index: -1;
 }
 
 /*
