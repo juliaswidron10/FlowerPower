@@ -44,7 +44,7 @@ nav > ol > li > a {
 }
 /**** end of Julia's code ****/
 
-.intro-inspired {
+/*.intro-inspired {
   margin-top: 1rem;
   display: flex;
   align-items: center;
@@ -53,22 +53,10 @@ nav > ol > li > a {
 .mockup-inspired {
   width: 700px;
   height: auto;
-  /*position: relative;
-  top: 0;
-  right: -2rem;*/
 }
 
 .text-inspired {
-  /*max-width: 43vw;
-  align-self: center;
-  justify-self: center;*/
   padding: 4rem;
-}
-
-section.intro-inspired > div.text-inspired > h1 {
-  font-size: 3rem;
-  font-weight: 100;
-  margin: 0;
 }
 
 button {
@@ -79,6 +67,48 @@ button {
   margin: 2rem 0;
   padding: 10px 15px;
   font-size: 1.4rem;
+}
+*/
+
+.intro-inspired {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 5vw;
+  display: flex;
+  grid-gap: 4vw;
+}
+
+.mockup-inspired {
+  width: 40vw;
+  height: auto;
+  margin-left: 4vw;
+}
+
+.text-inspired {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+}
+
+button {
+  border: none;
+  background-color: var(--secondary-color);
+  color: var(--main-color);
+  border-radius: 0;
+  margin: 2rem 0;
+  /*padding: 10px 15px;*/
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 1.3vw 2vw;
+  width: fit-content;
+  margin-top: 1.5vw;
+}
+
+section.intro-inspired > div.text-inspired > h1 {
+  font-size: 3rem;
+  font-weight: 100;
+  margin: 0;
 }
 
 .posters-wrapper {
@@ -285,5 +315,115 @@ section.posters-wrapper > h1 {
 /*
 .hidden {
   display: none;
+}
+*/
+
+@media only screen and (max-width: 500px) {
+  /*
+      header nav {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    header nav ul {
+        display: grid;
+        grid-template-columns: 1fr;
+        font-size: 2.3vw;
+        margin-bottom: 1vw;
+        padding: 0px;
+    }
+
+    .logo {
+        display: flex;
+        width: 50%;
+        height: auto;
+        margin: 0 40% 0% 25%;
+    }
+    */
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  nav > ol {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    /*margin-left: auto;*/
+    padding: 0;
+    margin: 0;
+    align-items: center;
+  }
+
+  .intro-inspired {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: column-reverse;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .mockup-inspired {
+    width: 80vw;
+    height: auto;
+    /*margin: 0;*/
+    margin-top: 4vw;
+    /*margin-left: 5vw;*/
+  }
+
+  .text-inspired {
+    text-align: center;
+  }
+
+  button {
+    align-self: center;
+    font-size: 2.3vw;
+    width: 30vw;
+    padding: 2.5vw;
+    margin-top: 1vw;
+  }
+
+  section.intro-inspired > div.text-inspired > h1 {
+    font-size: 2rem;
+  }
+
+  section.posters-wrapper > h1 {
+    font-size: 2rem;
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+
+  .posters-gallery {
+    padding-bottom: 10rem;
+    padding-top: 2rem;
+    margin-top: 0;
+  }
+}
+
+/*
+nav {
+  display: flex;
+  width: 90%;
+  padding: 2rem 4rem 0 4rem;
+}
+
+nav > h1 {
+  font-size: 2rem;
+}
+
+nav > ol {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin-left: auto;
+}
+
+nav > ol > li {
+  padding: 0 20px;
 }
 */
