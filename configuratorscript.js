@@ -548,51 +548,69 @@ const features = {
 
 function featureButtons() {
   document.querySelectorAll(".option").forEach((option) => option.addEventListener("click", toggleOption));
-  // document.querySelectorAll(".option").forEach((id) => id.addEventListener("click", selectOnlyOne(id)));
 }
 
-// selectOnlyOne();
-
-// function selectOnlyThis(id) {
-//   console.log("megy?");
-//   for (var i = 1; i <= 5; i++) {
-//     document.getElementById("option" + i).selected = false;
-//     if (document.getElementById("option" + i).selected === false) {
-//       document.getElementById("option" + i).classList.add("hide");
-//     } else {
-//       document.getElementById("option" + i).classList.remove("hide");
-//     }
-//   }
-//   document.getElementById(id).selected = true;
-// }
+//exclusive choice attempt, but not working
+let pickedElements = {
+  flower: [],
+  leaf: [],
+  frame: [],
+};
 
 function toggleOption(event) {
   console.group("togggle");
   const target = event.currentTarget;
   const feature = target.dataset.feature;
-
+  // flower1
   //Takes the state of the feature and makes it reverse aka toogle
   features[feature] = !features[feature];
 
   //Features feature is true
   if (features[feature]) {
     // feature added
-    console.log(`Feature ${feature} is turned on!`);
-
-    // If feature is (now) turned on:
-    target.classList.add("chosen");
-
-    // - un-hide the feature-layer(s) in the #product-preview;
-    console.log(`.posterSVG [data-feature=${feature}]`);
-    document.querySelector(`.posterSVG [data-feature=${feature}]`).classList.remove("hide");
-  } else {
-    // feature removed
-    console.log(`Feature ${feature} is turned off!`);
-
-    // Else - if the feature (became) turned off:
-    // - no longer mark target as chosen
-    target.classList.remove("chosen");
-    // - hide the feature-layer(s) in the #product-preview
-    document.querySelector(`.posterSVG [data-feature=${feature}]`).classList.add("hide");
+    // feature = flower1;
+    let feature = features[feature];
+    let featureType = feature.slice(0, -1); //flower
+    if (pickedElements.featureType.length() === 1) {
+      pickedElements.featureType.classList.add("hide");
+      pickedElements.featureType = pickedElements.featureType.shift();
+      pickedElements.featureType = pickedElements.featureType.push(features);
+      pickedElements.featureType.classList.remove("hide");
+    } else {
+      pickedElements.featureType = pickedElements.featureType.push(features);
+      pickedElements.featureType.classList.remove("hide");
+    }
   }
 }
+
+// //this works but without the exclusive choice
+// function toggleOption(event) {
+//   console.group("togggle");
+//   const target = event.currentTarget;
+//   const feature = target.dataset.feature;
+
+//   //Takes the state of the feature and makes it reverse aka toogle
+//   features[feature] = !features[feature];
+
+//   //Features feature is true
+//   if (features[feature]) {
+//     // feature added
+//     console.log(`Feature ${feature} is turned on!`);
+
+//     // If feature is (now) turned on:
+//     target.classList.add("chosen");
+
+//     // - un-hide the feature-layer(s) in the #product-preview;
+//     console.log(`.posterSVG [data-feature=${feature}]`);
+//     document.querySelector(`.posterSVG [data-feature=${feature}]`).classList.remove("hide");
+//   } else {
+//     // feature removed
+//     console.log(`Feature ${feature} is turned off!`);
+
+//     // Else - if the feature (became) turned off:
+//     // - no longer mark target as chosen
+//     target.classList.remove("chosen");
+//     // - hide the feature-layer(s) in the #product-preview
+//     document.querySelector(`.posterSVG [data-feature=${feature}]`).classList.add("hide");
+//   }
+// }

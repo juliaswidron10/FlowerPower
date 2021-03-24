@@ -5,8 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flower Power - Configurator</title>
-
-    <!-- <link rel="stylesheet" href="css/normalize.css" /> -->
     <link rel="stylesheet" href="configuratorstyle.css" />
   </head>
   <body>
@@ -14,11 +12,20 @@
       <h1 class="site-title">Configurator</h1>
     </header>
     <main>
+<div class="introtext">
+  <h2>You can customize...</h2>
+<ul>
+  <li><p>1. Select your greens: Start by selecting your main elements, such as a flower and a background leaf.</p></li>
+  <li><p>2. Write your text: Do you want to tell something with your poster? We got you covered.</p></li>
+  <li><p>3. Drag & drop shapes: You can use different shapes to make your poster even more chic.</p></li>
+  <li><p>4. Choose a frame: You can choose from our pre-set frames, or you can also leave your poster without it. You're the creator!</p></li>
+  <li><p>5. Color it: This is where the fun starts. Color your background, and flower (petals and stem separately). Be creative!</p></li>
+</ul>
+</div>
+
       <div class="sectionwrapper_all">
         <div class="selection-selector">
-          <div class="selector" id="frame">
-            <img src="img/selectors/frame.svg" alt="frame_selector" data-feature="frame" />
-          </div>
+          
   
           <div class="selector" id="flower">
             <img src="img/selectors/flower.svg" alt="flower_selector" data-feature="flower" />
@@ -29,6 +36,10 @@
           <div class="selector" id="shapes">
             <img src="img/selectors/shapes.svg" alt="shapes_selector" data-feature="shapes" />
           </div>
+
+<div class="selector" id="frame">
+            <img src="img/selectors/frame.svg" alt="frame_selector" data-feature="frame" />
+          </div>
                   <div class="selector" id="colors">
             <img src="img/selectors/color-palette.svg" alt="color_selector" data-feature="colors" />
           </div>
@@ -37,6 +48,9 @@
         <div class="selection">
           <div class="frame-wrapper hide">
             <h2>Frame</h2>
+            <div class="wrapper-introtext">
+     <p>Choose a frame which fits your design the best. Or just leave it simple, without any frame.</p>
+            </div>
             <div class="frames-wrapper">
             <div class="frame">
               <img src="IMGs/frame1.png" alt="" class="option" data-feature="frame1" />
@@ -58,6 +72,9 @@
 
           <div class="color-wrapper hide">
             <h2>Colors</h2>
+             <div class="wrapper-introtext">
+            <p>Simply select the element you want to tint and choose a color from the different color palettes. Remember: You can color: petals, stem, and background.</p>
+            </div>
             <h5>Background colors</h5>
             <div class="c-color-picker js-color-picker"></div>
               <h5>Petal colors</h5>
@@ -66,8 +83,12 @@
             <div class="c-color-picker3 js-color-picker3"></div>
           </div>
 
-          <div class="flower-wrapper hide">
-            <h2>Flower</h2>
+          <div class="flower-wrapper">
+            <h2>Flower and leaf selector</h2>
+             <div class="wrapper-introtext">
+            <p>We believe in clean, simple and effective design. Hence you can only add one piece of flower and leaf.</p>
+           </div>
+           <h5>Flowers</h5>
             <div class="flower-wrapper-1">
               <span class="flower">
                 <img src="IMGs/flower1.png" alt="flower" class="option"  value="value1" id="option1" data-feature="flower1"  />
@@ -91,7 +112,7 @@
               >
             </div>
 
-            <h2>Leaf</h2>
+            <h5>Leaves</h5>
             <div class="flower-wrapper-2">
               <span class="leaf">
                 <img src="IMGs/leaf1.png" alt="leaf" class="option" data-feature="leaf1" />
@@ -109,8 +130,10 @@
           </div>
           <div class="text-wrapper hide">
             <h2>Text</h2>
-
-            <label for="lText">Large text:</label>
+            <div class="wrapper-introtext">
+<p>Write your headline in the box, choose a font and click 'Save'. You are always welcome to change the text or font on your poster. Experiment! And find what's best for you!</p>
+</div>           
+<label for="lText">Large text:</label>
             <input type="text" id="lText" name="lText" />
 
             <label>Font:</label>
@@ -121,6 +144,8 @@
 
           <div class="shape-wrapper hide">
             <h2>Shapes</h2>
+            <div class="wrapper-introtext">
+            <p>Let's spice your poster up, drag & drop a shape to your poster!</p></div>
             <!-- <div class="frame-1">
               <img src="img/small/car_gatling_gun.png" alt="gatlin_gun_feature" class="option" data-feature="gun" />
             </div>
@@ -128,26 +153,6 @@
               <img src="img/small/car_gatling_gun.png" alt="gatlin_gun_feature" class="option" data-feature="gun" />
             </div> -->
           </div>
-
-          <!-- <div class="features">
-            <h2>Features</h2>
-            <div class="feature_wrapper">
-              <div class="feature">
-                <img src="SVGs/flower1-01.svg" alt="gatlin_gun_feature" class="option" data-feature="flower" />
-              </div>
-              <div class="feature">
-                <img src="img/small/car_rims.png" alt="rims_feature" class="option" data-feature="rims" />
-              </div>
-              <div class="feature">
-                <img src="img/small/lips.png" alt="lips_feature" class="option" data-feature="lips" />
-              </div>
-              <div class="feature">
-                <img src="img/small/hot-rod-flames.png" alt="flames_feature" class="option" data-feature="flames" />
-              </div>
-            </div>
-          </div>
-        </div> -->
-
         
       </div>
       <div class="posterSVG">
