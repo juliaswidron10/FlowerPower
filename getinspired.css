@@ -347,6 +347,7 @@ section.posters-wrapper > h1 {
     align-items: center;
     padding: 0;
     margin: 0;
+    width: 100%;
   }
 
   nav > ol {
