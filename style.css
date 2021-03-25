@@ -224,6 +224,10 @@ div.iconsconf > div.icon > img {
   justify-self: center;
 }
 
+img {
+  object-fit: cover;
+}
+
 /***** ADDED OR EDITED CODE - Elena ******/
 
 @media only screen and (max-width: 500px) {
@@ -246,7 +250,7 @@ div.iconsconf > div.icon > img {
   }
 
   section.top {
-    margin-top: 10vw;
+    margin-top: 15vw;
     /*width: 90vw;*/
     display: flex;
     overflow: hidden;
@@ -260,13 +264,17 @@ div.iconsconf > div.icon > img {
   }
 
   section.top > img.topflower {
-    /*left: -3.5rem;*/
-    display: none;
+    top: 10rem;
+    left: -3.5rem;
+    position: absolute;
+    z-index: -1;
   }
 
   section.top > img.topleaf {
+    top: 12rem;
     right: -1rem;
-    /*display: none;*/
+    position: absolute;
+    z-index: -1;
   }
 
   section.top > div.texttop {
@@ -295,6 +303,7 @@ div.iconsconf > div.icon > img {
     font-size: 1.5rem;
     text-align: center;
     padding-bottom: 1rem;
+    padding-top: 5rem;
   }
 
   div.cofig {
@@ -312,11 +321,11 @@ div.iconsconf > div.icon > img {
     font-size: 0.8rem;
   }
 
-  div.iconsconf {
-    /*max-width: 100px;
-    max-height: 4.5rem;*/
-    /*align-items: center;*/
-  }
+  /*div.iconsconf {
+    max-width: 100px;
+    max-height: 4.5rem;
+    align-items: center;
+  }*/
 
   div.iconsconf > div.icon {
     height: 3rem;
@@ -335,22 +344,50 @@ div.iconsconf > div.icon > img {
   .framearrow {
     height: 2rem;
     width: 4rem;
-    position: relative;
     left: 1.5rem;
   }
 
   #texttype {
-    /*border-left: 2px solid var(--secondary-color);
-  border-top: 2px solid var(--secondary-color);*/
     margin-right: 3rem;
   }
 
   .textarrow {
     height: 2rem;
     width: 4rem;
-    position: relative;
-    left: 1.5rem;
-    top: -3rem;
+    left: 1.2rem;
+    top: -8rem;
+  }
+
+  #flowertype {
+    margin-right: 3rem;
+  }
+
+  .flowerarrow {
+    height: 4rem;
+    width: 3rem;
+    left: 4rem;
+    top: -4rem;
+  }
+
+  /*#backgroundtype {
+    margin-right: 3rem;
+  }*/
+
+  .backgroundarrow {
+    height: 3rem;
+    width: 3rem;
+    left: 4rem;
+    top: -6.5rem;
+  }
+
+  #shapetype {
+    margin-left: 4.2rem;
+  }
+
+  .shapearrow {
+    height: 2rem;
+    width: 4rem;
+    left: -1.6rem;
   }
 }
 
