@@ -51,7 +51,7 @@ section.top {
 
 section.top > img {
   /*width: 400px;*/
-  width: 30vw;
+  width: 30vw; /*** CHANGED THE WIDTH TO VW - Elena ***/
   height: auto;
 }
 
@@ -224,7 +224,7 @@ div.iconsconf > div.icon > img {
   justify-self: center;
 }
 
-/***** ADDED OR EDITED CODE ******/
+/***** ADDED OR EDITED CODE - Elena ******/
 
 @media only screen and (max-width: 500px) {
   nav {
