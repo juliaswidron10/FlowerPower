@@ -8,7 +8,6 @@
   padding: 0;
 }
 
-
 :root {
   --background-color: #e6e6e6;
   --component-color: #fff;
@@ -26,15 +25,15 @@ body {
   min-height: 100vh;
   background-color: var(--background-color);
   font-family: var(--main-font);
+  color: #414141;
 }
 
-main {
+/* main {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   margin: 0 5vw 0 5vw;
-}
-
+} */
 
 p {
   font-size: 1.2vw;
@@ -60,15 +59,17 @@ p {
 /*Navigation*/
 nav {
   display: flex;
-  width: 90%;
-  padding: 2rem 4rem 0 4rem;
+  width: 100%;
+  padding: 2rem 1rem 1rem 4rem;
 }
 
-nav>h1 {
+nav > h1 {
   font-size: 2rem;
+  margin-top: -10px;
+  font-family: var(--headline-font);
 }
 
-nav>ol {
+nav > ol {
   display: flex;
   flex-direction: row;
   list-style: none;
@@ -76,11 +77,11 @@ nav>ol {
   /* margin-right: 5rem; */
 }
 
-nav>ol>li {
+nav > ol > li {
   padding: 0 20px;
 }
 
-nav>ol>li>a {
+nav > ol > li > a {
   color: var(--secondary-color);
   text-decoration: none;
   text-transform: uppercase;
@@ -98,14 +99,14 @@ h5 {
   padding: 10px 0;
 }
 
-
 .introtext h2 {
   font-size: 1.5vw;
 }
 
 .introtext {
   position: absolute;
-  background-color: #f2dabeb6;
+  /* background-color: #f2dabeb6; */
+  background-color: rgba(255, 255, 255, 0.61);
   padding: 1.5rem;
   margin-top: 5rem;
   margin-right: 2rem;
@@ -126,8 +127,6 @@ h5 {
   font-size: 1vw;
   margin-bottom: 15px;
 }
-
-
 
 .feature_wrapper {
   display: flex;
@@ -163,22 +162,19 @@ h5 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 50vw;
+  /* width: 50vw; */
 }
 
 .selection {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid #e9e9e9;
-  /* padding-right: 5vw; */
 }
 
 .selectionwrapper {
   background-color: white;
   display: flex;
   flex-direction: row;
-  margin-right: 5vw;
-  margin-top: 2rem;
+  margin: 2rem 5vw 0 5vw;
 
   padding: 1.5vw;
   border-radius: 2rem;
@@ -192,15 +188,17 @@ h5 {
   /* border-bottom: 1px solid #e9e9e9; */
   background-color: white;
   /* margin-top: 2rem; */
-  padding: 1rem;
+  /* padding: 1rem; */
+  padding: 1.8vw;
   border-radius: 2rem;
-  width: 35vw;
+  /* width: 35vw; */
+  width: 30vw;
 }
 
 .actionstab {
   float: right;
+  margin-right: 5vw;
 }
-
 
 .selection-selector {
   /* padding: 2rem; */
@@ -247,7 +245,6 @@ h5 {
   transition: transform 0.3s ease-in-out;
 }
 
-
 /* SVG STYLING */
 
 .shadow-layer {
@@ -257,8 +254,6 @@ h5 {
 .unclickable {
   pointer-events: none;
 }
-
-
 
 .g-to-color {
   pointer-events: auto;
@@ -286,7 +281,7 @@ h5 {
 
 /* FEATURE CSS */
 .chosen {
-  background-color:rgb(233, 233, 233);
+  background-color: rgb(233, 233, 233);
 }
 
 .hide {
@@ -372,7 +367,7 @@ h5 {
   margin-bottom: 20px;
   row-gap: 10px;
 }
-
+/* 
 .posterSVG {
   position: relative;
   flex-grow: 1;
@@ -383,59 +378,62 @@ h5 {
   display: grid;
   /* overflow: hidden; */
   font-family: var(--main-font);
-}
-
+} */
 
 .text-container {
   width: 25vw;
-  position: relative;
+  position: absolute;
   height: 100%;
   justify-self: center;
   align-self: center;
   margin: auto;
-  z-index: 0;
+  z-index: 10;
   color: white;
 }
 
-.text-container>h1 {
+.text-container > h1 {
   text-align: right;
-  margin-right: 2vw;
+  margin-right: 7vw;
   margin-top: 2vw;
 }
 
-.text-container>h2 {
+.text-container > h2 {
   text-align: right;
   font-weight: 100;
-  margin-right: 2vw;
+  margin-right: 7vw;
 }
 
-.text-container>h3 {
-  margin-top: 19vw;
+.text-container > h3 {
+  margin-top: 10vw;
   margin-left: 1vw;
   margin-right: 6vw;
   font-weight: 800;
   text-transform: uppercase;
 }
 
-.text-container>p {
+.text-container > p {
   margin-left: 1vw;
   margin-right: 6vw;
   font-weight: 100;
   font-size: 10px;
 }
 
+.posterSVG {
+  position: relative;
+  flex-grow: 1;
+  margin: 3rem 0;
+}
+
 .posterSVG_basic {
   display: block;
+  fill: pink;
   /* max-width: 100%;
   height: auto; */
   z-index: -1;
-  fill: pink;
-  position: absolute;
-  width: 25vw;
+  /* fill: white; */
+
+  width: 20vw;
   height: auto;
-  top: 0;
-  justify-self: center;
-  align-self: center;
 }
 
 .posterSVG_part {
@@ -444,17 +442,40 @@ h5 {
   position: absolute;
   /* width: 100%;
   height: auto; */
+  top: 0;
+  left: 0;
+
+  width: 20vw;
+  height: auto;
+}
+
+/* .posterSVG_basic {
+  display: block;
+  z-index: -1;
+  fill: pink;
+  position: absolute;
+  width: 25vw;
+  height: auto;
+  top: 0;
+  justify-self: center;
+  align-self: center;
+} */
+
+/* .posterSVG_part {
+  z-index: 1;
+  fill: white;
+  position: absolute;
   width: 30vw;
   height: 45vw;
   top: -3.5vw;
   justify-self: center;
-}
+} */
 
 .small {
-  width: 20vw;
+  width: 15vw;
   height: auto;
   margin-left: 5%;
-  margin-top: 15%;
+  margin-top: 5%;
 }
 
 .text-form {
@@ -462,20 +483,20 @@ h5 {
   margin-left: 2vw;
 }
 
-.text-form>label,
-.text-form>button {
+.text-form > label,
+.text-form > button {
   margin-top: 15px;
 }
 
-.text-form>input,
-.text-form>select {
+.text-form > input,
+.text-form > select {
   border-radius: 20px;
   padding: 5px;
   border: 1px solid gray;
   width: 70%;
 }
 
-.text-form>#submitfont {
+.text-form > #submitfont {
   margin-top: 15px;
   border-radius: 20px;
   padding: 5px;
@@ -493,7 +514,8 @@ h5 {
   width: 25vw;
 } */
 
-#textOutput {}
+#textOutput {
+}
 
 /* SHAPES STYLING*/
 .shapesPickerContainer {
@@ -502,7 +524,7 @@ h5 {
   flex-wrap: wrap;
 }
 
-.shapesPickerContainer>div>img {
+.shapesPickerContainer > div > img {
   max-width: 7.5vw;
   height: 7.5vw;
   cursor: pointer;
@@ -527,7 +549,8 @@ h5 {
   position: absolute;
   z-index: 20;
 }
-.posterShape.shape1 , .posterShape.shape2{
+.posterShape.shape1,
+.posterShape.shape2 {
   height: 80%;
   width: 80%;
 }
@@ -574,3 +597,148 @@ body {
   }
 }
 
+@media only screen and (max-width: 500px) {
+  nav {
+    display: none;
+  }
+
+  .actionstab {
+    display: none;
+  }
+
+  .sectionwrapper_all {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .posterSVG {
+    order: 1;
+    margin: 2rem 0;
+  }
+
+  .selectionwrapper {
+    order: 2;
+    margin: 0;
+    /* display: flex; */
+    flex-direction: column;
+  }
+
+  .selection-selector {
+    display: flex;
+    flex-direction: row;
+    padding-right: 0;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .selector {
+    width: 15vw;
+    height: 15vw;
+  }
+
+  .selector img {
+    padding: 3px;
+    height: 10vw;
+    width: 10vw;
+  }
+
+  .selection {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .posterSVG_basic {
+    width: 70vw;
+    margin-left: 15%;
+  }
+
+  .text-container {
+    width: 55vw;
+    margin-left: 26%;
+    margin-top: 10%;
+  }
+
+  .text-container h3 {
+    margin-top: 25vw;
+  }
+
+  .posterSVG_part {
+    width: 70vw;
+    margin-left: 15%;
+  }
+
+  .small {
+    width: 55vw;
+    margin-left: 25%;
+    margin-top: 10%;
+  }
+
+  .color-wrapper h2,
+  .frame-wrapper h2,
+  .flower-wrapper h2,
+  .text-wrapper h2,
+  .shape-wrapper h2,
+  .frame-wrapper h5,
+  .flower-wrapper h5,
+  .text-wrapper h5,
+  .shape-wrapper h5 {
+    display: none;
+  }
+
+  .wrapper-introtext {
+    display: none;
+  }
+
+  .flower,
+  .leaf,
+  .frame {
+    width: 20vw;
+    height: 20vw;
+  }
+
+  .flower p,
+  .leaf p,
+  .frame p {
+    display: none;
+  }
+
+  .flower img,
+  .leaf img,
+  .frame img {
+    padding: 4px;
+    width: 20vw;
+  }
+
+  .flower-wrapper-1,
+  .flower-wrapper-2,
+  .frames-wrapper {
+    flex-wrap: nowrap;
+  }
+
+  .c-color-picker,
+  .c-color-picker2,
+  .c-color-picker3 {
+    flex-wrap: nowrap;
+    /* height: 20vw; */
+    /* width: 20vw; */
+  }
+
+  .c-color-picker__color,
+  .c-color-picker__color2,
+  .c-color-picker__color3 {
+    height: 7vw;
+    width: 7vw;
+  }
+
+  .c-color-picker__color-inner,
+  .c-color-picker__color-inner2,
+  .c-color-picker__color-inner3,
+  .c-font-picker__font-inner {
+    height: 7vw;
+    width: 7vw;
+  }
+
+  .color-wrapper h5 {
+    font-size: 5vw;
+  }
+}
