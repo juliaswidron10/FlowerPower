@@ -244,26 +244,6 @@ div.iconsconf > div.icon > img {
     margin: 0;
     align-items: center;
   }
-  /*
-  .intro-inspired {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    flex-direction: column-reverse;
-    margin-bottom: 0;
-    padding-bottom: 0;
-  }
-
-  .mockup-inspired {
-    width: 80vw;
-    height: auto;
-    margin-top: 4vw;
-  }
-
-  .text-inspired {
-    text-align: center;
-  }
-*/
 
   section.top {
     margin-top: 10vw;
@@ -275,16 +255,18 @@ div.iconsconf > div.icon > img {
   }
 
   section.top > img {
-    width: 32vw;
+    width: 35vw;
     height: auto;
   }
 
   section.top > img.topflower {
-    left: -3.5rem;
+    /*left: -3.5rem;*/
+    display: none;
   }
 
   section.top > img.topleaf {
-    right: -3rem;
+    right: -1rem;
+    /*display: none;*/
   }
 
   section.top > div.texttop {
@@ -314,50 +296,193 @@ div.iconsconf > div.icon > img {
     text-align: center;
     padding-bottom: 1rem;
   }
+
+  div.cofig {
+    height: 110vw;
+    width: 90vw;
+    padding: 5vw;
+  }
+
+  div.cofig > img.posterexample {
+    width: 45vw;
+    /*padding-top: 6rem;*/
+  }
+
+  div.cofig h1 {
+    font-size: 0.8rem;
+  }
+
+  div.iconsconf {
+    /*max-width: 100px;
+    max-height: 4.5rem;*/
+    /*align-items: center;*/
+  }
+
+  div.iconsconf > div.icon {
+    height: 3rem;
+    width: 3rem;
+  }
+
+  div.iconsconf > div.icon > img {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  #frametype {
+    margin-right: 3rem;
+  }
+
+  .framearrow {
+    height: 2rem;
+    width: 4rem;
+    position: relative;
+    left: 1.5rem;
+  }
+
+  #texttype {
+    /*border-left: 2px solid var(--secondary-color);
+  border-top: 2px solid var(--secondary-color);*/
+    margin-right: 3rem;
+  }
+
+  .textarrow {
+    height: 2rem;
+    width: 4rem;
+    position: relative;
+    left: 1.5rem;
+    top: -3rem;
+  }
 }
 
 /*
-  section.top {
-  margin-top: -2rem;
-  width: 100vw;
-  display: flex;
-  overflow: hidden;
+section.lower {
+  justify-items: center;
+  display: grid;
+}
+section.lower > h1 {
+  justify-self: left;
+  padding-left: 4rem;
+  font-weight: 200;
+  font-size: 1.4rem;
 }
 
-section.top > img {
+div.cofig {
+  display: grid;
+  height: 70vw;
+  width: 80vw;
+  padding: 5vw;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+div.cofig > img.posterexample {
   width: 30vw;
   height: auto;
-}
-
-section.top > img.topflower {
-  position: relative;
-  top: 0;
-  left: -2rem;
-  transform: rotate(5deg);
-}
-
-section.top > img.topleaf {
-  position: relative;
-  top: 0;
-  right: -2rem;
-  transform: rotate(-15deg);
-}
-
-section.top > div.texttop {
-  max-width: 43vw;
+  grid-area: 1 / 1 / -1/ -1;
   align-self: center;
   justify-self: center;
 }
 
-section.top > div.texttop > h1 {
-  font-size: 3rem;
-  font-weight: 100;
-  margin: 0;
+div.cofig h1 {
+  font-size: 1rem;
+  text-align: left;
 }
-*/
 
-/*.posters-gallery {
-    padding-bottom: 10rem;
-    padding-top: 2rem;
-    margin-top: 0;
-  }*/
+div.iconsconf {
+  max-width: 140px;
+  max-height: 4.5rem;
+}
+
+#frametype {
+  grid-area: 1/1 / span 1 / span 1;
+  align-self: center;
+  justify-self: center;
+}
+
+.framearrow {
+  border-left: 2px solid var(--secondary-color);
+  border-bottom: 2px solid var(--secondary-color);
+  height: 4rem;
+  width: 10rem;
+  position: relative;
+  left: 2rem;
+}
+
+#flowertype {
+  grid-area: 1/2 / span 1 / span 1;
+  align-self: flex-start;
+  justify-self: center;
+}
+
+.flowerarrow {
+  border-right: 2px solid var(--secondary-color);
+  border-top: 2px solid var(--secondary-color);
+  height: 7rem;
+  width: 4rem;
+  position: relative;
+  left: 6rem;
+  top: -5rem;
+}
+
+#shapetype {
+  grid-area: 2/3 / span 1 / span 1;
+  align-self: flex-start;
+  justify-self: center;
+}
+
+.shapearrow {
+  border-right: 2px solid var(--secondary-color);
+  border-bottom: 2px solid var(--secondary-color);
+  height: 3rem;
+  width: 7rem;
+  position: relative;
+  left: -5rem;
+  top: 0rem;
+}
+
+#backgroundtype {
+  grid-area: 3/2 / span 1 / span 1;
+  align-self: flex-end;
+  justify-self: center;
+}
+
+.backgroundarrow {
+  border-right: 2px solid var(--secondary-color);
+  border-bottom: 2px solid var(--secondary-color);
+  height: 8rem;
+  width: 3rem;
+  position: relative;
+  left: 6rem;
+  top: -14rem;
+}
+
+#texttype {
+  grid-area: 2/1 / span 1 / span 1;
+  align-self: flex-end;
+  justify-self: center;
+}
+
+.textarrow {
+  border-left: 2px solid var(--secondary-color);
+  border-top: 2px solid var(--secondary-color);
+  height: 4rem;
+  width: 9rem;
+  position: relative;
+  left: 3rem;
+  top: -13rem;
+}
+
+div.iconsconf > div.icon {
+  background-color: white;
+  height: 4.5rem;
+  width: 4.5rem;
+  border-radius: 5rem;
+  display: grid;
+}
+
+div.iconsconf > div.icon > img {
+  height: 3.5rem;
+  width: 3.5rem;
+  align-self: center;
+  justify-self: center;
+}*/
