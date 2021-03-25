@@ -75,11 +75,33 @@
             </div>
           </div>
 
+
+
+
+        <div class="selection">
+          <div class="frame-wrapper selectionwrappers hide">
+            <h2>Frame</h2>
+            <div class="wrapper-introtext">
+              <p>Choose a frame which fits your design the best. Or just leave it simple, without any frame.</p>
+            </div>
+            <div class="frames-wrapper">
+              <div class="frame">
+                <img src="IMGs/frame1.png" alt="" class="option" data-feature="frame1" />
+              </div>
+              <div class="frame">
+                <img src="IMGs/frame2.png" alt="" class="option" data-feature="frame2" />
+              </div>
+              <div class="frame">
+                <img src="IMGs/frame3.png" alt="" class="option" data-feature="frame3" />
+              </div>
+              <div class="frame">
+                <img src="IMGs/frame4.png" alt="" class="option" data-feature="frame4" />
           <div class="selection">
             <div class="frame-wrapper hide">
               <h2>Frame</h2>
               <div class="wrapper-introtext">
                 <p>Choose a frame which fits your design the best. Or just leave it simple, without any frame.</p>
+
               </div>
               <div class="frames-wrapper">
                 <div class="frame">
@@ -100,6 +122,9 @@
               </div>
             </div>
 
+
+
+       <div class="colors-wrapper selectionwrappers hide">
             <div class="color-wrapper hide">
               <h2>Colors</h2>
               <div class="wrapper-introtext">
@@ -116,7 +141,7 @@
               <div class="c-color-picker3 js-color-picker3"></div>
             </div>
 
-            <div class="flower-wrapper">
+        <div class="flower-wrapper selectionwrappers">
               <h2>Flower and leaf selector</h2>
               <div class="wrapper-introtext">
                 <p>
@@ -229,6 +254,25 @@
               </form>
             </div>
 
+        <div class="text-wrapper selectionwrappers hide">
+          <h2>Edit Text on your poster!</h2>
+          <form class="text-form">
+            <label for="pickmonth">Month:</label>
+            <input type="text" maxlength="4" id="pickmonth" name="pickmonth" placeholder="FEB" />
+            <label for="pickday">Day:</label>
+            <input type="text" maxlength="2" id="pickday" name="pickday" placeholder="23" />
+            <label for="pickquote">Pick your Quote:</label>
+            <input type="text" maxlength="200" id="pickquote" name="pickquote"
+              placeholder="Change the world by being yourself." />
+            <label for="picklong">Pick your text:</label>
+            <input type="text" maxlength="600" id="picklong" name="picklong"
+              placeholder="Lorem ipsum dolor sit amet..." />
+
+            <label>Font:</label>
+            <select name="fonts" id="fonts">
+            </select>
+            <input type="button" value="Submit" id="submitfont">
+          </form>
             <div class="shape-wrapper hide">
               <h2>Shapes</h2>
               <div class="shapesPickerContainer">
@@ -240,11 +284,22 @@
               </div>
             </div>
           </div>
+
         </div>
         <div class="posterSVG">
           <div class="posterShapesContainer">
             <div class="posterShape"></div>
           </div>
+
+
+        <div class="shapes-wrapper selectionwrappers hide">
+          <h2>Shapes</h2>
+          <div class="shapesPickerContainer">
+            <div class="shapeDiv"><img src="shapes/shape1.svg" alt="vector shape" class="shape1 "></div>
+            <div class="shapeDiv"><img src="shapes/shape2.svg" alt="vector shape" class="shape2 "></div>
+            <div class="shapeDiv"> <img src="shapes/shape3.svg" alt="vector shape" class="shape3 "></div>
+            <div class="shapeDiv"><img src="shapes/shape4.svg" alt="vector shape" class="shape4 "></div>
+            <div class="shapeDiv"><img src="shapes/shape5.svg" alt="vector shape" class="shape5 "></div>
 
           <div class="text-container">
             <h1 id="textday">23</h1>
@@ -254,6 +309,7 @@
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
               dolore magna aliqua. Ut enim ad minim veniam, commodo consequa.
             </p>
+
           </div>
 
           <img class="posterSVG_part unclickable hide" src="IMGs/frame1.png" alt="" data-feature="frame1" />
@@ -286,6 +342,39 @@
       </div>
     </template>
 
-    <script src="configuratorscript.js"></script>
-  </body>
+
+      <img class="posterSVG_part frameon unclickable hide" src="IMGs/frame1.png" alt="" data-feature="frame1" />
+      <img class="posterSVG_part frameon unclickable hide" src="IMGs/frame2.png" alt="" data-feature="frame2" />
+      <img class="posterSVG_part frameon unclickable hide" src="IMGs/frame3.png" alt="" data-feature="frame3" />
+      <img class="posterSVG_part frameon unclickable hide" src="IMGs/frame4.png" alt="" data-feature="frame4" />
+      <img class="posterSVG_part frameon unclickable hide" src="IMGs/frame5.png" alt="" data-feature="frame5" />
+      <img class="posterSVG_part small unclickable hide" src="IMGs/leaf1.png" alt="" data-feature="leaf1" />
+      <img class="posterSVG_part small unclickable hide" src="IMGs/leaf2.png" alt="" data-feature="leaf2" />
+      <img class="posterSVG_part small unclickable hide" src="IMGs/leaf4.png" alt="" data-feature="leaf4" />
+
+
+    </div>
+  </main>
+
+  <template class="t-color">
+    <div class="c-color-picker__color">
+      <div class="c-color-picker__color-inner"></div>
+    </div>
+  </template>
+
+  <template class="t-color2">
+    <div class="c-color-picker__color2">
+      <div class="c-color-picker__color-inner2"></div>
+    </div>
+  </template>
+
+  <template class="t-color3">
+    <div class="c-color-picker__color3">
+      <div class="c-color-picker__color-inner3"></div>
+    </div>
+  </template>
+
+  <script src="configuratorscript.js"></script>
+</body>
+
 </html>

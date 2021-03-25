@@ -3,9 +3,10 @@
 window.addEventListener("DOMContentLoaded", start);
 
 let elementToPaint = undefined;
+let openModal = [];
 
 function start() {
-  console.log("fiiiire");
+  // console.log("fiiiire");
   const urls = [
     "SVGs/background.svg",
     "SVGs/flower1-01.svg",
@@ -29,8 +30,17 @@ function start() {
   document.querySelectorAll(".shapesPickerContainer > * > img").forEach(e => {
     e.addEventListener('click', function () {
       addShape(e.className);
-  })
-  })
+    })
+  });
+
+  document.querySelectorAll(".selection-selector > div.selector").forEach(e => {
+    e.addEventListener('click', function () {
+      e.classList.toggle('active');
+      changeActiveModal(e.id);
+    })
+  });
+
+  document.querySelector("#submitfont").addEventListener("click", textSaved);
 }
 
 async function getSVG(url) {
@@ -57,72 +67,22 @@ function actionsmodalCloses() {
 }
 
 
+function changeActiveModal(category) {
 
-// ...MODUL SELECTOR...
-document.querySelector("#frame").addEventListener("click", showFrameModul);
-document.querySelector("#colors").addEventListener("click", showColorModul);
-document.querySelector("#flower").addEventListener("click", showFlowerModul);
-document.querySelector("#text").addEventListener("click", showTextModul);
-document.querySelector("#shapes").addEventListener("click", showShapesModul);
-
-// document.querySelectorAll(".selector")
-// for each
-// add event listener
-// e => e.target.addEventListener
-
-function showFrameModul() {
-  console.log("frammodul");
-  document.querySelector("#frame").style.backgroundColor = "#505050";
-  document.querySelector("#frame img").style.fill = "white";
-
-  document.querySelector("#colors").style.backgroundColor = "white";
-  document.querySelector("#colors img").style.fill = "#505050";
-
-  document.querySelector(".frame-wrapper").classList.remove("hide");
-  document.querySelector(".color-wrapper").classList.add("hide");
-  document.querySelector(".flower-wrapper").classList.add("hide");
-  document.querySelector(".shape-wrapper").classList.add("hide");
-  document.querySelector(".text-wrapper").classList.add("hide");
+  console.log('change modal');
+  let modalToOpen = document.querySelector(`#${category}`);
+  document.querySelectorAll('.selector').forEach(e =>{
+    e.style.backgroundColor = "white";
+  })
+  modalToOpen.style.backgroundColor = "#e3e3e3";
+  
+  document.querySelectorAll('.selectionwrappers').forEach( e =>{
+    e.classList.add("hide");
+  })
+  let sectionToShow = document.querySelector(`.${category}-wrapper`);
+  sectionToShow.classList.remove("hide");
 }
-
-function showColorModul() {
-  document.querySelector("#colors").style.backgroundColor = "#505050";
-  document.querySelector("#colors img").style.fill = "white";
-
-  document.querySelector("#frame").style.backgroundColor = "white";
-  document.querySelector("#frame img").style.fill = "#505050";
-
-  document.querySelector(".color-wrapper").classList.remove("hide");
-  document.querySelector(".frame-wrapper").classList.add("hide");
-  document.querySelector(".flower-wrapper").classList.add("hide");
-  document.querySelector(".shape-wrapper").classList.add("hide");
-  document.querySelector(".text-wrapper").classList.add("hide");
-}
-
-function showFlowerModul() {
-  document.querySelector(".flower-wrapper").classList.remove("hide");
-  document.querySelector(".color-wrapper").classList.add("hide");
-  document.querySelector(".frame-wrapper").classList.add("hide");
-  document.querySelector(".shape-wrapper").classList.add("hide");
-  document.querySelector(".text-wrapper").classList.add("hide");
-}
-
-function showTextModul() {
-
-  document.querySelector(".text-wrapper").classList.remove("hide");
-  document.querySelector(".flower-wrapper").classList.add("hide");
-  document.querySelector(".color-wrapper").classList.add("hide");
-  document.querySelector(".frame-wrapper").classList.add("hide");
-  document.querySelector(".shape-wrapper").classList.add("hide");
-}
-
-function showShapesModul() {
-  document.querySelector(".shape-wrapper").classList.remove("hide");
-  document.querySelector(".text-wrapper").classList.add("hide");
-  document.querySelector(".flower-wrapper").classList.add("hide");
-  document.querySelector(".color-wrapper").classList.add("hide");
-  document.querySelector(".frame-wrapper").classList.add("hide");
-}
+  
 
 const settings = {
   colors: ["#A0DEDD", "#FFC9CD", "#C7CFE4", "#FFD5AF", "#BDBEBD", "#C3F6DE", "#E6A2CB", "#7D8BB1", "#7B7B7B"],
@@ -155,18 +115,19 @@ function showText() {
 }
 
 function fontButtons() {
+  document.querySelector("#submitfont").removeEventListener("click", textSaved);
   showFontButtons();
   // startFontButtons();
 
   function showFontButtons() {
-    settings.fonts.forEach((font) =>{
+    settings.fonts.forEach((font) => {
 
       let selection = document.querySelector("#fonts");
       let option = document.createElement("option");
       option.value = font;
       option.text = font;
       selection.appendChild(option);
-      
+      document.querySelector("#submitfont").addEventListener("click", textSaved);
     })
   }
 }
@@ -176,26 +137,27 @@ function textSaved() {
   let day = document.querySelector("#textday");
   let quote = document.querySelector("#textquote");
   let longtext = document.querySelector("#textlong");
-  let fontContainer = document.querySelector(".text-wrapper hide");
+  let fontContainer = document.querySelector(".text-wrapper");
   month.textContent = pickmonth.value;
   day.textContent = pickday.value;
   quote.textContent = pickquote.value;
   longtext.textContent = picklong.value;
-  fontContainer.style.fontFamily = option.value;
+  fontContainer.style.fontFamily = document.querySelector('option').value;
+
 }
 
 let shapesOnPoster = [];
 
-function addShape(shape){
+function addShape(shape) {
   console.log(shapesOnPoster);
-  if(shapesOnPoster.length <= 4){
+  if (shapesOnPoster.length <= 4) {
     shapesOnPoster.push(shape);
     shape = shape.trim();
 
     let container = document.querySelector(".posterShapesContainer");
     let shapecontainer = document.createElement('div');
 
-    let shapeImage =  `url("/shapes/${shape}_white.svg")`;
+    let shapeImage = `url("/shapes/${shape}_white.svg")`;
     console.log(shapeImage);
     shapecontainer.classList.add("posterShape");
     shapecontainer.classList.add(`${shape}`);
@@ -204,16 +166,19 @@ function addShape(shape){
     shapecontainer.style.backgroundImage = shapeImage;
 
     container.appendChild(shapecontainer);
-    
+
     console.log(shape)
-  }else{
+  } else {
     alert("Too much elements")
   }
 }
 
 
 function dragElement(elmnt) {
-  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  var pos1 = 0,
+    pos2 = 0,
+    pos3 = 0,
+    pos4 = 0;
   if (document.getElementById(elmnt.id + "header")) {
     // if present, the header is where you move the DIV from:
     document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
@@ -221,6 +186,7 @@ function dragElement(elmnt) {
     // otherwise, move the DIV from anywhere inside the DIV: 
     elmnt.onmousedown = dragMouseDown;
   }
+
   function dragMouseDown(e) {
     e = e || window.event;
     e.preventDefault();
@@ -231,6 +197,7 @@ function dragElement(elmnt) {
     // call a function whenever the cursor moves:
     document.onmousemove = elementDrag;
   }
+
   function elementDrag(e) {
     e = e || window.event;
     e.preventDefault();
@@ -297,31 +264,31 @@ function colorButtons() {
     // if (elementToPaint === undefined) {
     //   alert("In order to color your poster, select an element first! ;)");
     // } else {
-      const start = clickedColorButtonInner.getBoundingClientRect();
-      const end = elementToPaint.getBoundingClientRect();
+    const start = clickedColorButtonInner.getBoundingClientRect();
+    const end = elementToPaint.getBoundingClientRect();
 
-      const elementHeight = end.height / 2;
-      console.log(elementHeight);
+    const elementHeight = end.height / 2;
+    console.log(elementHeight);
 
-      const elementWidth = end.width / 2;
+    const elementWidth = end.width / 2;
 
-      const diffX = end.x - start.x + elementWidth;
-      console.log(diffX);
-      const diffY = end.y - start.y + elementHeight;
-      console.log(diffY);
+    const diffX = end.x - start.x + elementWidth;
+    console.log(diffX);
+    const diffY = end.y - start.y + elementHeight;
+    console.log(diffY);
 
-      clickedColorButtonInner.style.setProperty("--diffX", diffX);
-      clickedColorButtonInner.style.setProperty("--diffY", diffY);
-      clickedColorButtonInner.classList.add("animate-color-in");
+    clickedColorButtonInner.style.setProperty("--diffX", diffX);
+    clickedColorButtonInner.style.setProperty("--diffY", diffY);
+    clickedColorButtonInner.classList.add("animate-color-in");
 
-      clickedColorButtonInner.addEventListener("animationend", animateColor);
-      // TODO:
-      // document.querySelector(".c-color-picker__color").classList.add("animate-color-scale");
+    clickedColorButtonInner.addEventListener("animationend", animateColor);
+    // TODO:
+    // document.querySelector(".c-color-picker__color").classList.add("animate-color-scale");
 
-      function animateColor() {
-        clickedColorButtonInner.classList.remove("animate-color-in");
-        clickedColorButtonInner.removeEventListener("animationend", animateColor);
-        elementToPaint.style.fill = clickedColorButton.dataset.color;
+    function animateColor() {
+      clickedColorButtonInner.classList.remove("animate-color-in");
+      clickedColorButtonInner.removeEventListener("animationend", animateColor);
+      elementToPaint.style.fill = clickedColorButton.dataset.color;
       // }
     }
     settings.pickedColor = clickedColorButton.dataset.color;
@@ -372,7 +339,6 @@ function color2Buttons() {
       if (color === settings.pickedColor) {
         clone.querySelector(".c-color-picker__color2").classList.add("is-active");
       }
-
       colorPicker.appendChild(clone);
     });
   }
@@ -412,7 +378,7 @@ function color2Buttons() {
       clickedColorButtonInner.classList.add("animate-color-in");
 
       clickedColorButtonInner.addEventListener("animationend", animateColor2);
-   
+
       function animateColor2() {
         clickedColorButtonInner.classList.remove("animate-color-in");
         clickedColorButtonInner.removeEventListener("animationend", animateColor2);
@@ -502,27 +468,47 @@ const features = {
   frame: false,
   flower: false,
   leaf: false,
-  shape: false,
 };
 
 function featureButtons() {
   document.querySelectorAll(".option").forEach((option) => option.addEventListener("click", toggleOption));
 }
-
+ 
 
 function toggleOption(event) {
   console.group("togggle");
   const target = event.currentTarget;
-  const feature = target.dataset.feature ;
-
+  const feature = target.dataset.feature;
+ 
   //Takes the state of the feature and makes it reverse aka toogle
   features[feature] = !features[feature];
 
 
   //Features feature is true
   if (features[feature]) {
+    
     console.log(`Feature ${feature} is turned on!`);
-
+    let featureType = feature.trim();
+    featureType = feature.slice(0,-1);
+    console.log(featureType);
+    // features[feature] = true;
+    if(featureType === "flower"){
+      document.querySelectorAll('.posterSVG_part').forEach(e =>{
+        e.classList.remove('chosen');
+        e.classList.add('hide');
+      })
+    }else if(featureType === "leaf"){
+      document.querySelectorAll('.posterSVG > img.small').forEach(e =>{
+        e.classList.remove('chosen');
+        e.classList.add('hide');
+      });
+    }else{
+      document.querySelectorAll('.posterSVG > .frameon').forEach(e =>{
+        e.classList.remove('chosen');
+        e.classList.add('hide');
+      });
+    }
+    
     // If feature is (now) turned on:
     target.classList.add("chosen");
 
@@ -532,7 +518,7 @@ function toggleOption(event) {
   } else {
     // feature removed
     console.log(`Feature ${feature} is turned off!`);
-
+    features[feature] = false;
     // Else - if the feature (became) turned off:
     // - no longer mark target as chosen
     target.parentElement.classList.remove("chosen");
@@ -540,3 +526,11 @@ function toggleOption(event) {
     document.querySelector(`.posterSVG [data-feature=${feature}]`).classList.add("hide");
   }
 }
+
+
+const addedElements = {
+  flower: [],
+  leaf: [],
+  frame: [],
+ }
+ 
