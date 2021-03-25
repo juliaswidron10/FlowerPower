@@ -4,7 +4,7 @@
       <rect width="777" height="1164"/>
     </clipPath>
   </defs>
-  <g id="carBody"  class="g-to-color" data-name="Web 1920 – 13" clip-path="url(#clip-Web_1920_13)">
+  <g id="carBody"  data-name="Web 1920 – 13" clip-path="url(#clip-Web_1920_13)">
     <rect width="777" height="1164" fill-rule="evenodd"/>
   </g>
 </svg>
