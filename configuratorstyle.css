@@ -381,7 +381,7 @@ h5 {
   max-height: 45vw;
   justify-self: center;
   display: grid;
-  overflow: hidden;
+  /* overflow: hidden; */
   font-family: var(--main-font);
 }
 

@@ -84,7 +84,7 @@
 
 
         <div class="selection">
-          <div class="frame-wrapper hide">
+          <div class="frame-wrapper selectionwrappers hide">
             <h2>Frame</h2>
             <div class="wrapper-introtext">
               <p>Choose a frame which fits your design the best. Or just leave it simple, without any frame.</p>
@@ -110,7 +110,7 @@
 
 
 
-       <div class="color-wrapper hide">
+       <div class="colors-wrapper selectionwrappers hide">
               <h2>Colors</h2>
               <div class="wrapper-introtext">
                 <p>
@@ -126,7 +126,7 @@
               <div class="c-color-picker3 js-color-picker3"></div>
             </div>
 
-            <div class="flower-wrapper">
+        <div class="flower-wrapper selectionwrappers">
               <h2>Flower and leaf selector</h2>
               <div class="wrapper-introtext">
                 <p>
@@ -210,9 +210,9 @@
             </div>
 
 
-        <div class="text-wrapper hide">
+        <div class="text-wrapper selectionwrappers hide">
           <h2>Edit Text on your poster!</h2>
-          <form onsubmit="textSaved()" class="text-form">
+          <form class="text-form">
             <label for="pickmonth">Month:</label>
             <input type="text" maxlength="4" id="pickmonth" name="pickmonth" placeholder="FEB" />
             <label for="pickday">Day:</label>
@@ -227,11 +227,11 @@
             <label>Font:</label>
             <select name="fonts" id="fonts">
             </select>
-            <input type="submit" value="Submit" id="submitfont">
+            <input type="button" value="Submit" id="submitfont">
           </form>
         </div>
 
-        <div class="shape-wrapper hide">
+        <div class="shapes-wrapper selectionwrappers hide">
           <h2>Shapes</h2>
           <div class="shapesPickerContainer">
             <div class="shapeDiv"><img src="shapes/shape1.svg" alt="vector shape" class="shape1 "></div>
@@ -260,11 +260,11 @@
       </div>
 
 
-      <img class="posterSVG_part unclickable hide" src="IMGs/frame1.png" alt="" data-feature="frame1" />
-      <img class="posterSVG_part unclickable hide" src="IMGs/frame2.png" alt="" data-feature="frame2" />
-      <img class="posterSVG_part unclickable hide" src="IMGs/frame3.png" alt="" data-feature="frame3" />
-      <img class="posterSVG_part unclickable hide" src="IMGs/frame4.png" alt="" data-feature="frame4" />
-      <img class="posterSVG_part unclickable hide" src="IMGs/frame5.png" alt="" data-feature="frame5" />
+      <img class="posterSVG_part frameon unclickable hide" src="IMGs/frame1.png" alt="" data-feature="frame1" />
+      <img class="posterSVG_part frameon unclickable hide" src="IMGs/frame2.png" alt="" data-feature="frame2" />
+      <img class="posterSVG_part frameon unclickable hide" src="IMGs/frame3.png" alt="" data-feature="frame3" />
+      <img class="posterSVG_part frameon unclickable hide" src="IMGs/frame4.png" alt="" data-feature="frame4" />
+      <img class="posterSVG_part frameon unclickable hide" src="IMGs/frame5.png" alt="" data-feature="frame5" />
       <img class="posterSVG_part small unclickable hide" src="IMGs/leaf1.png" alt="" data-feature="leaf1" />
       <img class="posterSVG_part small unclickable hide" src="IMGs/leaf2.png" alt="" data-feature="leaf2" />
       <img class="posterSVG_part small unclickable hide" src="IMGs/leaf4.png" alt="" data-feature="leaf4" />
