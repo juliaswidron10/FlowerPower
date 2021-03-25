@@ -18,6 +18,8 @@ nav {
   display: flex;
   width: 90%;
   padding: 2rem 4rem 0 4rem;
+  align-items: center;
+  overflow: hidden;
 }
 
 nav > h1 {
@@ -43,7 +45,8 @@ nav > ol > li > a {
 }
 
 section.top {
-  margin-top: -2rem;
+  /*margin-top: -2rem;*/
+  margin-top: 1rem;
   width: 100vw;
   display: flex;
   overflow: hidden;
