@@ -22,7 +22,8 @@ body {
   min-height: 100vh;
   background-color: var(--background-color);
 }
-main{
+
+main {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -373,6 +374,7 @@ h2 {
   justify-self: center;
   display: grid;
 }
+
 /* .posterSVG > *{
   position: relative;
   max-width: 30vw;
@@ -381,34 +383,38 @@ h2 {
   left: 0;
 } */
 
-.text-container{
+.text-container {
   width: 25vw;
   position: relative;
   height: 100%;
   justify-self: center;
   align-self: center;
   margin: auto;
-  z-index: 20;
+  z-index: 0;
   color: white;
 }
-.text-container > h1 {
+
+.text-container>h1 {
   text-align: right;
   margin-right: 2vw;
   margin-top: 2vw;
 }
-.text-container > h2 {
+
+.text-container>h2 {
   text-align: right;
-  font-weight: 100; 
+  font-weight: 100;
   margin-right: 2vw;
 }
-.text-container > h3 {
+
+.text-container>h3 {
   margin-top: 19vw;
   margin-left: 1vw;
   margin-right: 6vw;
   font-weight: 800;
   text-transform: uppercase;
 }
-.text-container > p {
+
+.text-container>p {
   margin-left: 1vw;
   margin-right: 6vw;
   font-weight: 100;
@@ -448,20 +454,25 @@ h2 {
   margin-top: 15%;
 }
 
-.text-form{
+.text-form {
   display: grid;
   margin-left: 2vw;
 }
-.text-form > label, .text-form > button{
+
+.text-form>label,
+.text-form>button {
   margin-top: 15px;
 }
-.text-form > input, .text-form > select{
+
+.text-form>input,
+.text-form>select {
   border-radius: 20px;
   padding: 5px;
   border: 1px solid gray;
   width: 70%;
 }
-.text-form > #submitfont{
+
+.text-form>#submitfont {
   margin-top: 15px;
   border-radius: 20px;
   padding: 5px;
@@ -479,5 +490,41 @@ h2 {
   width: 25vw;
 } */
 
-#textOutput {
+#textOutput {}
+
+/* SHAPES STYLING*/
+.shapesPickerContainer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.shapesPickerContainer>div>img {
+  max-width: 7.5vw;
+  height: 7.5vw;
+  cursor: pointer;
+}
+
+.shapeDiv {
+  /* border: 1px solid black; */
+  width: 8vw;
+  height: 8vw;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  margin: 1vw;
+}
+
+.posterShape {
+  /* background-image: url("/shapes/shape1_white.svg"); */
+  height: 40%;
+  width: 40%;
+  cursor: -moz-grab;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: 20;
+}
+.posterShape.shape1 , .posterShape.shape2{
+  height: 80%;
+  width: 80%;
 }

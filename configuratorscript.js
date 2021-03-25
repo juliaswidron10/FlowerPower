@@ -26,6 +26,11 @@ function start() {
   color3Buttons();
   fontButtons();
   featureButtons();
+  document.querySelectorAll(".shapesPickerContainer > * > img").forEach(e => {
+    e.addEventListener('click', function () {
+      addShape(e.className);
+  })
+  })
 }
 
 async function getSVG(url) {
@@ -193,6 +198,71 @@ function textSaved() {
   longtext.textContent = picklong.value;
   fontContainer.style.fontFamily = option.value;
 }
+
+let shapesOnPoster = [];
+
+function addShape(shape){
+  console.log(shapesOnPoster);
+    shapesOnPoster.push(shape);
+    shape = shape.trim();
+
+    let container = document.querySelector(".posterShapesContainer");
+    let shapecontainer = document.createElement('div');
+
+    let shapeImage =  `url("/shapes/${shape}_white.svg")`;
+    console.log(shapeImage);
+    shapecontainer.classList.add("posterShape");
+    shapecontainer.classList.add(`${shape}`);
+    dragElement(shapecontainer);
+
+    shapecontainer.style.backgroundImage = shapeImage;
+
+    container.appendChild(shapecontainer);
+    
+    console.log(shape)
+}
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    // if present, the header is where you move the DIV from:
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    // otherwise, move the DIV from anywhere inside the DIV: 
+    elmnt.onmousedown = dragMouseDown;
+  }
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    // stop moving when mouse button is released:
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+
+
+
 // ...color buttons...
 
 function colorButtons() {
@@ -503,32 +573,32 @@ function featureButtons() {
   // document.querySelectorAll(".option").forEach((id) => id.addEventListener("click", selectOnlyOne(id)));
 }
 
-// selectOnlyOne();
-
-// function selectOnlyThis(id) {
-//   console.log("megy?");
-//   for (var i = 1; i <= 5; i++) {
-//     document.getElementById("option" + i).selected = false;
-//     if (document.getElementById("option" + i).selected === false) {
-//       document.getElementById("option" + i).classList.add("hide");
-//     } else {
-//       document.getElementById("option" + i).classList.remove("hide");
-//     }
-//   }
-//   document.getElementById(id).selected = true;
-// }
-
 function toggleOption(event) {
   console.group("togggle");
   const target = event.currentTarget;
-  const feature = target.dataset.feature;
+  const feature = target.dataset.feature ;
 
   //Takes the state of the feature and makes it reverse aka toogle
   features[feature] = !features[feature];
 
+
   //Features feature is true
   if (features[feature]) {
-    // feature added
+  //   // feature added
+  //   feature = features[feature] ;
+  //   featureType = feature.slice(0,-1); //flower
+  //   if(pickedElements.featureType.length() === 1){
+
+  //     pickedElements.featureType.classList.add("hide");
+  //     pickedElements.featureType = pickedElements.featureType.shift();
+  //     pickedElements.featureType = pickedElements.featureType.push(features);
+  //     pickedElements.featureType.classList.remove("hide");
+  //   } else{
+  //     pickedElements.featureType = pickedElements.featureType.push(features);
+  //     pickedElements.featureType.classList.remove("hide");
+  //   }
+
+
     console.log(`Feature ${feature} is turned on!`);
 
     // If feature is (now) turned on:
