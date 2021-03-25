@@ -40,7 +40,23 @@ async function getSVG(url) {
   colorElements();
 }
 
-// .g-to-color a g-hez
+
+// actionstab
+document.querySelector(".actionstab").addEventListener("mouseover", actionsmodalOpen);
+
+function actionsmodalOpen() {
+  console.log("onmouse");
+  document.querySelector(".introtext").classList.remove("hide");
+}
+
+document.querySelector(".actionstab").addEventListener("mouseout", actionsmodalCloses);
+
+function actionsmodalCloses() {
+  console.log("mouseout");
+  document.querySelector(".introtext").classList.add("hide");
+}
+
+
 
 // ...MODUL SELECTOR...
 document.querySelector("#frame").addEventListener("click", showFrameModul);
@@ -84,12 +100,6 @@ function showColorModul() {
 }
 
 function showFlowerModul() {
-  // document.querySelector("#colors").style.backgroundColor = "#505050";
-  // document.querySelector("#colors img").style.fill = "white";
-
-  // document.querySelector("#frame").style.backgroundColor = "white";
-  // document.querySelector("#frame img").style.fill = "#505050";
-
   document.querySelector(".flower-wrapper").classList.remove("hide");
   document.querySelector(".color-wrapper").classList.add("hide");
   document.querySelector(".frame-wrapper").classList.add("hide");
@@ -98,11 +108,6 @@ function showFlowerModul() {
 }
 
 function showTextModul() {
-  // document.querySelector("#colors").style.backgroundColor = "#505050";
-  // document.querySelector("#colors img").style.fill = "white";
-
-  // document.querySelector("#frame").style.backgroundColor = "white";
-  // document.querySelector("#frame img").style.fill = "#505050";
 
   document.querySelector(".text-wrapper").classList.remove("hide");
   document.querySelector(".flower-wrapper").classList.add("hide");
@@ -112,12 +117,6 @@ function showTextModul() {
 }
 
 function showShapesModul() {
-  // document.querySelector("#colors").style.backgroundColor = "#505050";
-  // document.querySelector("#colors img").style.fill = "white";
-
-  // document.querySelector("#frame").style.backgroundColor = "white";
-  // document.querySelector("#frame img").style.fill = "#505050";
-
   document.querySelector(".shape-wrapper").classList.remove("hide");
   document.querySelector(".text-wrapper").classList.add("hide");
   document.querySelector(".flower-wrapper").classList.add("hide");
@@ -126,24 +125,11 @@ function showShapesModul() {
 }
 
 const settings = {
-  colors: [
-    "#A0DEDD",
-    "#FFC9CD",
-    "#C7CFE4",
-    "#FFD5AF",
-    "#BDBEBD",
-    "#FFFCA4",
-    "#C3F6DE",
-    "#E6A2CB",
-    "#95BC95",
-    "#629594",
-    "#7D8BB1",
-    "#7B7B7B",
-  ],
+  colors: ["#A0DEDD", "#FFC9CD", "#C7CFE4", "#FFD5AF", "#BDBEBD", "#C3F6DE", "#E6A2CB", "#7D8BB1", "#7B7B7B"],
 
-  colors2: ["#629594", "#7D8BB1", "#7B7B7B"],
+  colors2: ["#FFFCA4", "#FFC9CD", "#611243", "#FF897F", "#FFB572"],
 
-  colors3: ["#A0DEDD", "#FFC9CD", "#C7CFE4", "#FFD5AF"],
+  colors3: ["#95BC95", "#629594", "#B3C4AA"],
 
   fonts: ["Arial", "Montserrat"],
 };
@@ -152,7 +138,6 @@ const templates = {
   colorItem: document.querySelector(".t-color").content,
   colorItem2: document.querySelector(".t-color2").content,
   colorItem3: document.querySelector(".t-color3").content,
-  // fontItem: document.querySelector(".t-font").content,
 };
 
 // ...font & text...
@@ -224,11 +209,8 @@ function addShape(shape){
   }else{
     alert("Too much elements")
   }
-   
-
-
-
 }
+
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -301,17 +283,20 @@ function colorButtons() {
     colorButtons.forEach((colorButton) => {
       colorButton.addEventListener("click", clickColor);
     });
-  }
+  };
+
+
 
   function clickColor() {
     const clickedColorButton = this;
     console.log(clickedColorButton.dataset.color);
     console.log("clicked button", clickedColorButton);
     const clickedColorButtonInner = clickedColorButton.querySelector(".c-color-picker__color-inner");
+    const backgroundToPaint = document.querySelector(".posterSVG_basic");
 
-    if (elementToPaint === undefined) {
-      alert("In order to color your poster, select an element first! ;)");
-    } else {
+    // if (elementToPaint === undefined) {
+    //   alert("In order to color your poster, select an element first! ;)");
+    // } else {
       const start = clickedColorButtonInner.getBoundingClientRect();
       const end = elementToPaint.getBoundingClientRect();
 
@@ -337,17 +322,9 @@ function colorButtons() {
         clickedColorButtonInner.classList.remove("animate-color-in");
         clickedColorButtonInner.removeEventListener("animationend", animateColor);
         elementToPaint.style.fill = clickedColorButton.dataset.color;
-      }
+      // }
     }
-
     settings.pickedColor = clickedColorButton.dataset.color;
-
-    // TODO:
-    // const findLatestClickedColor = document.querySelector(".c-color-picker__color.is-active");
-    // if (findLatestClickedColor) {
-    //     findLatestClickedColor.classList.remove("is-active");
-    // }
-    // clickedColorButton.classList.add("is-active");
   }
 }
 
@@ -435,9 +412,7 @@ function color2Buttons() {
       clickedColorButtonInner.classList.add("animate-color-in");
 
       clickedColorButtonInner.addEventListener("animationend", animateColor2);
-      // TODO:
-      // document.querySelector(".c-color-picker__color").classList.add("animate-color-scale");
-
+   
       function animateColor2() {
         clickedColorButtonInner.classList.remove("animate-color-in");
         clickedColorButtonInner.removeEventListener("animationend", animateColor2);
@@ -446,13 +421,6 @@ function color2Buttons() {
     }
 
     settings.pickedColor = clickedColorButton.dataset.color;
-
-    // TODO:
-    // const findLatestClickedColor = document.querySelector(".c-color-picker__color.is-active");
-    // if (findLatestClickedColor) {
-    //     findLatestClickedColor.classList.remove("is-active");
-    // }
-    // clickedColorButton.classList.add("is-active");
   }
 }
 
@@ -524,62 +492,23 @@ function color3Buttons() {
     }
 
     settings.pickedColor = clickedColorButton.dataset.color;
-
-    // TODO:
-    // const findLatestClickedColor = document.querySelector(".c-color-picker__color.is-active");
-    // if (findLatestClickedColor) {
-    //     findLatestClickedColor.classList.remove("is-active");
-    // }
-    // clickedColorButton.classList.add("is-active");
   }
 }
 
-// coloring
-// function colorElements() {
-//   const groups = document.querySelectorAll(".g-to-color");
-//   console.log(groups);
-//   groups.forEach((group) => {
-//     group.addEventListener("click", storeElement);
-//     // group.style.fill = "#fff";
-
-//     function storeElement() {
-//       groups.forEach((group) => {
-//         group.classList.remove("g-to-color_active");
-//       });
-//       elementToPaint = group;
-//       group.classList.add("g-to-color_active");
-//       group.addEventListener("click", toggleActive);
-
-//       console.log(group);
-//     }
-
-//     function toggleActive() {
-//       group.classList.remove("g-to-color_active");
-//       group.removeEventListener("click", toggleActive);
-//       elementToPaint = undefined;
-//     }
-//   });
-// }
 
 // //----------FEATURE FUNCTION---------------
 // // The model of all features
 const features = {
   frame: false,
-  flower1: false,
-  flower2: false,
-  flower3: false,
-  flower4: false,
-  flower5: false,
-  leaf1: false,
-  leaf2: false,
-  leaf3: false,
+  flower: false,
+  leaf: false,
   shape: false,
 };
 
 function featureButtons() {
   document.querySelectorAll(".option").forEach((option) => option.addEventListener("click", toggleOption));
-  // document.querySelectorAll(".option").forEach((id) => id.addEventListener("click", selectOnlyOne(id)));
 }
+
 
 function toggleOption(event) {
   console.group("togggle");
@@ -592,21 +521,6 @@ function toggleOption(event) {
 
   //Features feature is true
   if (features[feature]) {
-  //   // feature added
-  //   feature = features[feature] ;
-  //   featureType = feature.slice(0,-1); //flower
-  //   if(pickedElements.featureType.length() === 1){
-
-  //     pickedElements.featureType.classList.add("hide");
-  //     pickedElements.featureType = pickedElements.featureType.shift();
-  //     pickedElements.featureType = pickedElements.featureType.push(features);
-  //     pickedElements.featureType.classList.remove("hide");
-  //   } else{
-  //     pickedElements.featureType = pickedElements.featureType.push(features);
-  //     pickedElements.featureType.classList.remove("hide");
-  //   }
-
-
     console.log(`Feature ${feature} is turned on!`);
 
     // If feature is (now) turned on:
@@ -621,7 +535,7 @@ function toggleOption(event) {
 
     // Else - if the feature (became) turned off:
     // - no longer mark target as chosen
-    target.classList.remove("chosen");
+    target.parentElement.classList.remove("chosen");
     // - hide the feature-layer(s) in the #product-preview
     document.querySelector(`.posterSVG [data-feature=${feature}]`).classList.add("hide");
   }
