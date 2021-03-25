@@ -18,6 +18,8 @@ nav {
   display: flex;
   width: 90%;
   padding: 2rem 4rem 0 4rem;
+  align-items: center;
+  overflow: hidden;
 }
 
 nav > h1 {
@@ -43,7 +45,8 @@ nav > ol > li > a {
 }
 
 section.top {
-  margin-top: -2rem;
+  /*margin-top: -2rem;*/
+  margin-top: 1rem;
   width: 100vw;
   display: flex;
   overflow: hidden;
@@ -89,6 +92,7 @@ section.top > div.texttop > button {
   margin: 2rem 0;
   padding: 10px 15px;
   font-size: 1.4rem;
+  cursor: pointer;
 }
 
 /*Styling the configuratoe*/
@@ -97,14 +101,15 @@ section.lower {
   display: grid;
 }
 section.lower > h1 {
-  justify-self: left;
-  padding-left: 4rem;
+  /*justify-self: left;
+  padding-left: 8rem;*/
+  justify-self: center;
+  padding-top: 4rem;
   font-weight: 200;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
 }
 div.cofig {
   display: grid;
-
   height: 70vw;
   width: 80vw;
   padding: 5vw;
@@ -120,6 +125,16 @@ div.cofig > img.posterexample {
   justify-self: center;
 }
 
+div.cofig > img.frame {
+  width: 35vw;
+  height: auto;
+  grid-area: 1 / 1 / -1/ -1;
+  align-self: center;
+  justify-self: center;
+  /*z-index: -1;*/
+  position: relative;
+}
+
 div.cofig h1 {
   font-size: 1rem;
   text-align: left;
@@ -129,6 +144,12 @@ div.iconsconf {
   max-width: 140px;
   max-height: 4.5rem;
 }
+
+/*
+div#flowertype.iconsconf > h1 {
+  margin-bottom: 3rem;
+}
+*/
 
 #frametype {
   grid-area: 1/1 / span 1 / span 1;
@@ -140,7 +161,7 @@ div.iconsconf {
   border-left: 2px solid var(--secondary-color);
   border-bottom: 2px solid var(--secondary-color);
   height: 4rem;
-  width: 10rem;
+  width: 7rem;
   position: relative;
   left: 2rem;
 }
@@ -149,12 +170,13 @@ div.iconsconf {
   grid-area: 1/2 / span 1 / span 1;
   align-self: flex-start;
   justify-self: center;
+  top: 5rem;
 }
 
 .flowerarrow {
   border-right: 2px solid var(--secondary-color);
   border-top: 2px solid var(--secondary-color);
-  height: 7rem;
+  height: 3.5rem;
   width: 4rem;
   position: relative;
   left: 6rem;
@@ -165,15 +187,16 @@ div.iconsconf {
   grid-area: 2/3 / span 1 / span 1;
   align-self: flex-start;
   justify-self: center;
+  margin-left: 5rem;
 }
 
 .shapearrow {
   border-right: 2px solid var(--secondary-color);
   border-bottom: 2px solid var(--secondary-color);
-  height: 3rem;
+  height: 4rem;
   width: 7rem;
   position: relative;
-  left: -5rem;
+  left: -4.5rem;
   top: 0rem;
 }
 
@@ -186,11 +209,11 @@ div.iconsconf {
 .backgroundarrow {
   border-right: 2px solid var(--secondary-color);
   border-bottom: 2px solid var(--secondary-color);
-  height: 8rem;
+  height: 4rem;
   width: 3rem;
   position: relative;
   left: 6rem;
-  top: -14rem;
+  top: -10rem;
 }
 
 #texttype {
@@ -203,9 +226,9 @@ div.iconsconf {
   border-left: 2px solid var(--secondary-color);
   border-top: 2px solid var(--secondary-color);
   height: 4rem;
-  width: 9rem;
+  width: 7rem;
   position: relative;
-  left: 3rem;
+  left: 2rem;
   top: -13rem;
 }
 
@@ -222,6 +245,10 @@ div.iconsconf > div.icon > img {
   width: 3.5rem;
   align-self: center;
   justify-self: center;
+}
+
+img {
+  object-fit: cover;
 }
 
 /***** ADDED OR EDITED CODE - Elena ******/
@@ -246,7 +273,7 @@ div.iconsconf > div.icon > img {
   }
 
   section.top {
-    margin-top: 10vw;
+    margin-top: 15vw;
     /*width: 90vw;*/
     display: flex;
     overflow: hidden;
@@ -260,13 +287,17 @@ div.iconsconf > div.icon > img {
   }
 
   section.top > img.topflower {
-    /*left: -3.5rem;*/
-    display: none;
+    top: 10rem;
+    left: -3.5rem;
+    position: absolute;
+    z-index: -1;
   }
 
   section.top > img.topleaf {
+    top: 12rem;
     right: -1rem;
-    /*display: none;*/
+    position: absolute;
+    z-index: -1;
   }
 
   section.top > div.texttop {
@@ -295,6 +326,7 @@ div.iconsconf > div.icon > img {
     font-size: 1.5rem;
     text-align: center;
     padding-bottom: 1rem;
+    padding-top: 5rem;
   }
 
   div.cofig {
@@ -312,11 +344,11 @@ div.iconsconf > div.icon > img {
     font-size: 0.8rem;
   }
 
-  div.iconsconf {
-    /*max-width: 100px;
-    max-height: 4.5rem;*/
-    /*align-items: center;*/
-  }
+  /*div.iconsconf {
+    max-width: 100px;
+    max-height: 4.5rem;
+    align-items: center;
+  }*/
 
   div.iconsconf > div.icon {
     height: 3rem;
@@ -334,155 +366,54 @@ div.iconsconf > div.icon > img {
 
   .framearrow {
     height: 2rem;
-    width: 4rem;
-    position: relative;
+    width: 3.5rem;
     left: 1.5rem;
   }
 
   #texttype {
-    /*border-left: 2px solid var(--secondary-color);
-  border-top: 2px solid var(--secondary-color);*/
     margin-right: 3rem;
   }
 
   .textarrow {
     height: 2rem;
-    width: 4rem;
-    position: relative;
-    left: 1.5rem;
-    top: -3rem;
+    width: 3.5rem;
+    left: 1rem;
+    top: -8rem;
+  }
+
+  #flowertype {
+    margin-right: 3rem;
+  }
+
+  .flowerarrow {
+    height: 3.8rem;
+    width: 3rem;
+    left: 4rem;
+    top: -4rem;
+  }
+
+  /*#backgroundtype {
+    margin-right: 3rem;
+  }*/
+
+  .backgroundarrow {
+    height: 2.5rem;
+    width: 3rem;
+    left: 4rem;
+    top: -6rem;
+  }
+
+  #shapetype {
+    margin-left: 4.2rem;
+  }
+
+  .shapearrow {
+    height: 2rem;
+    width: 3rem;
+    left: -1.3rem;
+  }
+
+  div.cofig > img.frame {
+    width: 50vw;
   }
 }
-
-/*
-section.lower {
-  justify-items: center;
-  display: grid;
-}
-section.lower > h1 {
-  justify-self: left;
-  padding-left: 4rem;
-  font-weight: 200;
-  font-size: 1.4rem;
-}
-
-div.cofig {
-  display: grid;
-  height: 70vw;
-  width: 80vw;
-  padding: 5vw;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-}
-
-div.cofig > img.posterexample {
-  width: 30vw;
-  height: auto;
-  grid-area: 1 / 1 / -1/ -1;
-  align-self: center;
-  justify-self: center;
-}
-
-div.cofig h1 {
-  font-size: 1rem;
-  text-align: left;
-}
-
-div.iconsconf {
-  max-width: 140px;
-  max-height: 4.5rem;
-}
-
-#frametype {
-  grid-area: 1/1 / span 1 / span 1;
-  align-self: center;
-  justify-self: center;
-}
-
-.framearrow {
-  border-left: 2px solid var(--secondary-color);
-  border-bottom: 2px solid var(--secondary-color);
-  height: 4rem;
-  width: 10rem;
-  position: relative;
-  left: 2rem;
-}
-
-#flowertype {
-  grid-area: 1/2 / span 1 / span 1;
-  align-self: flex-start;
-  justify-self: center;
-}
-
-.flowerarrow {
-  border-right: 2px solid var(--secondary-color);
-  border-top: 2px solid var(--secondary-color);
-  height: 7rem;
-  width: 4rem;
-  position: relative;
-  left: 6rem;
-  top: -5rem;
-}
-
-#shapetype {
-  grid-area: 2/3 / span 1 / span 1;
-  align-self: flex-start;
-  justify-self: center;
-}
-
-.shapearrow {
-  border-right: 2px solid var(--secondary-color);
-  border-bottom: 2px solid var(--secondary-color);
-  height: 3rem;
-  width: 7rem;
-  position: relative;
-  left: -5rem;
-  top: 0rem;
-}
-
-#backgroundtype {
-  grid-area: 3/2 / span 1 / span 1;
-  align-self: flex-end;
-  justify-self: center;
-}
-
-.backgroundarrow {
-  border-right: 2px solid var(--secondary-color);
-  border-bottom: 2px solid var(--secondary-color);
-  height: 8rem;
-  width: 3rem;
-  position: relative;
-  left: 6rem;
-  top: -14rem;
-}
-
-#texttype {
-  grid-area: 2/1 / span 1 / span 1;
-  align-self: flex-end;
-  justify-self: center;
-}
-
-.textarrow {
-  border-left: 2px solid var(--secondary-color);
-  border-top: 2px solid var(--secondary-color);
-  height: 4rem;
-  width: 9rem;
-  position: relative;
-  left: 3rem;
-  top: -13rem;
-}
-
-div.iconsconf > div.icon {
-  background-color: white;
-  height: 4.5rem;
-  width: 4.5rem;
-  border-radius: 5rem;
-  display: grid;
-}
-
-div.iconsconf > div.icon > img {
-  height: 3.5rem;
-  width: 3.5rem;
-  align-self: center;
-  justify-self: center;
-}*/
