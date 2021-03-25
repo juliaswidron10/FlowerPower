@@ -1,226 +1,363 @@
 :root {
-    --main-font: montserrat, sans-serif;
-    --main-color: #E6E6E6;
-    --secondary-color: #505050;
-    --pink: #FFCCCE;
-    --background: #A0DEDD;
+  --main-font: montserrat, sans-serif;
+  --main-color: #e6e6e6;
+  --secondary-color: #505050;
+  --pink: #ffccce;
+  --background: #a0dedd;
 }
 
 body {
-    font-family: var(--main-font);
-    color: var(--secondary-color);
-    margin: 0;
-    padding: 0;
-    background-color: var(--background);
+  font-family: var(--main-font);
+  color: var(--secondary-color);
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
 }
 
 nav {
-    display: flex;
-    width: 90%;
-    padding: 2rem 4rem 0 4rem;
+  display: flex;
+  width: 90%;
+  padding: 2rem 4rem 0 4rem;
 }
 
-nav>h1 {
-    font-size: 2rem;
+nav > h1 {
+  font-size: 2rem;
 }
 
-nav>ol {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    margin-left: auto;
-    /* margin-right: 5rem; */
+nav > ol {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin-left: auto;
+  /* margin-right: 5rem; */
 }
 
-nav>ol>li {
-    padding: 0 20px;
+nav > ol > li {
+  padding: 0 20px;
 }
 
-nav>ol>li>a {
-    color: var(--secondary-color);
-    text-decoration: none;
-    text-transform: uppercase;
+nav > ol > li > a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 section.top {
-    margin-top: -2rem;
-    width: 100vw;
-    display: flex;
-    overflow: hidden;
+  margin-top: -2rem;
+  width: 100vw;
+  display: flex;
+  overflow: hidden;
 }
 
-section.top>img {
-    width: 400px;
-    height: auto;
-
+section.top > img {
+  /*width: 400px;*/
+  width: 30vw;
+  height: auto;
 }
 
-section.top>img.topflower {
-    position: relative;
-    top: 0;
-    left: -2rem;
-    transform: rotate(5deg);
+section.top > img.topflower {
+  position: relative;
+  top: 0;
+  left: -2rem;
+  transform: rotate(5deg);
 }
 
-section.top>img.topleaf {
-    position: relative;
-    top: 0;
-    right: -2rem;
-    transform: rotate(-15deg);
+section.top > img.topleaf {
+  position: relative;
+  top: 0;
+  right: -2rem;
+  transform: rotate(-15deg);
 }
 
-section.top>div.texttop {
-    max-width: 43vw;
-    align-self: center;
-    justify-self: center;
+section.top > div.texttop {
+  max-width: 43vw;
+  align-self: center;
+  justify-self: center;
 }
 
-section.top>div.texttop>h1 {
-    font-size: 3rem;
-    font-weight: 100;
-    margin: 0;
+section.top > div.texttop > h1 {
+  font-size: 3rem;
+  font-weight: 100;
+  margin: 0;
 }
 
-section.top>div.texttop>button {
-    border: none;
-    background-color: var(--secondary-color);
-    color: var(--main-color);
-    border-radius: 0;
-    margin: 2rem 0;
-    padding: 10px 15px;
-    font-size: 1.4rem;
+section.top > div.texttop > button {
+  border: none;
+  background-color: var(--secondary-color);
+  color: var(--main-color);
+  border-radius: 0;
+  margin: 2rem 0;
+  padding: 10px 15px;
+  font-size: 1.4rem;
 }
 
 /*Styling the configuratoe*/
-section.lower{
-    justify-items: center;
-    display: grid;
+section.lower {
+  justify-items: center;
+  display: grid;
 }
-section.lower >h1{
-    justify-self: left;
-    padding-left: 4rem;
-    font-weight: 200;
-    font-size: 1.4rem;
+section.lower > h1 {
+  justify-self: left;
+  padding-left: 4rem;
+  font-weight: 200;
+  font-size: 1.4rem;
 }
 div.cofig {
-    display: grid;
-    
-    height: 70vw;
-    width: 80vw;
-    padding: 5vw;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+  display: grid;
+
+  height: 70vw;
+  width: 80vw;
+  padding: 5vw;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
 }
 
-div.cofig>img.posterexample {
-    width: 30vw;
-    height: auto;
-    grid-area: 1 / 1 / -1/ -1;
-    align-self: center;
-    justify-self: center;
+div.cofig > img.posterexample {
+  width: 30vw;
+  height: auto;
+  grid-area: 1 / 1 / -1/ -1;
+  align-self: center;
+  justify-self: center;
 }
 
 div.cofig h1 {
-    font-size: 1rem;
-    text-align: left;
+  font-size: 1rem;
+  text-align: left;
 }
 
 div.iconsconf {
-    max-width: 140px;
-    max-height: 4.5rem;
+  max-width: 140px;
+  max-height: 4.5rem;
 }
 
 #frametype {
-    grid-area: 1/1/ span 1 / span 1;
-    align-self: center;
-    justify-self: center;
+  grid-area: 1/1 / span 1 / span 1;
+  align-self: center;
+  justify-self: center;
 }
 
 .framearrow {
-    border-left: 2px solid var(--secondary-color);
-    border-bottom: 2px solid var(--secondary-color);
-    height: 4rem;
-    width: 10rem;
-    position: relative;
-    left: 2rem;
+  border-left: 2px solid var(--secondary-color);
+  border-bottom: 2px solid var(--secondary-color);
+  height: 4rem;
+  width: 10rem;
+  position: relative;
+  left: 2rem;
 }
 
 #flowertype {
-    grid-area: 1/2/ span 1 / span 1;
-    align-self: flex-start;
-    justify-self: center;
+  grid-area: 1/2 / span 1 / span 1;
+  align-self: flex-start;
+  justify-self: center;
 }
 
 .flowerarrow {
-    border-right: 2px solid var(--secondary-color);
-    border-top: 2px solid var(--secondary-color);
-    height: 7rem;
-    width: 4rem;
-    position: relative;
-    left: 6rem;
-    top: -5rem;
+  border-right: 2px solid var(--secondary-color);
+  border-top: 2px solid var(--secondary-color);
+  height: 7rem;
+  width: 4rem;
+  position: relative;
+  left: 6rem;
+  top: -5rem;
 }
 
 #shapetype {
-    grid-area: 2/3/ span 1 / span 1;
-    align-self: flex-start;
-    justify-self: center;
+  grid-area: 2/3 / span 1 / span 1;
+  align-self: flex-start;
+  justify-self: center;
 }
 
 .shapearrow {
-    border-right: 2px solid var(--secondary-color);
-    border-bottom: 2px solid var(--secondary-color);
-    height: 3rem;
-    width: 7rem;
-    position: relative;
-    left: -5rem;
-    top: 0rem;
+  border-right: 2px solid var(--secondary-color);
+  border-bottom: 2px solid var(--secondary-color);
+  height: 3rem;
+  width: 7rem;
+  position: relative;
+  left: -5rem;
+  top: 0rem;
 }
 
 #backgroundtype {
-    grid-area: 3/2/ span 1 / span 1;
-    align-self: flex-end;
-    justify-self: center;
+  grid-area: 3/2 / span 1 / span 1;
+  align-self: flex-end;
+  justify-self: center;
 }
 
 .backgroundarrow {
-    border-right: 2px solid var(--secondary-color);
-    border-bottom: 2px solid var(--secondary-color);
-    height: 8rem;
-    width: 3rem;
-    position: relative;
-    left: 6rem;
-    top: -14rem;
+  border-right: 2px solid var(--secondary-color);
+  border-bottom: 2px solid var(--secondary-color);
+  height: 8rem;
+  width: 3rem;
+  position: relative;
+  left: 6rem;
+  top: -14rem;
 }
 
 #texttype {
-    grid-area: 2/1/ span 1 / span 1;
-    align-self: flex-end;
-    justify-self: center;
+  grid-area: 2/1 / span 1 / span 1;
+  align-self: flex-end;
+  justify-self: center;
 }
 
 .textarrow {
-    border-left: 2px solid var(--secondary-color);
-    border-top: 2px solid var(--secondary-color);
-    height: 4rem;
-    width: 9rem;
-    position: relative;
-    left: 3rem;
-    top: -13rem;
+  border-left: 2px solid var(--secondary-color);
+  border-top: 2px solid var(--secondary-color);
+  height: 4rem;
+  width: 9rem;
+  position: relative;
+  left: 3rem;
+  top: -13rem;
 }
 
-div.iconsconf>div.icon {
-    background-color: white;
-    height: 4.5rem;
-    width: 4.5rem;
-    border-radius: 5rem;
-    display: grid;
-
+div.iconsconf > div.icon {
+  background-color: white;
+  height: 4.5rem;
+  width: 4.5rem;
+  border-radius: 5rem;
+  display: grid;
 }
 
-div.iconsconf>div.icon>img {
-    height: 3.5rem;
-    width: 3.5rem;
+div.iconsconf > div.icon > img {
+  height: 3.5rem;
+  width: 3.5rem;
+  align-self: center;
+  justify-self: center;
+}
+
+/***** ADDED OR EDITED CODE ******/
+
+@media only screen and (max-width: 500px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  nav > ol {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+  }
+  /*
+  .intro-inspired {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: column-reverse;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .mockup-inspired {
+    width: 80vw;
+    height: auto;
+    margin-top: 4vw;
+  }
+
+  .text-inspired {
+    text-align: center;
+  }
+*/
+
+  section.top {
+    margin-top: 10vw;
+    /*width: 90vw;*/
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+  }
+
+  section.top > img {
+    width: 32vw;
+    height: auto;
+  }
+
+  section.top > img.topflower {
+    left: -3.5rem;
+  }
+
+  section.top > img.topleaf {
+    right: -3rem;
+  }
+
+  section.top > div.texttop {
+    max-width: 60vw;
     align-self: center;
     justify-self: center;
+  }
+
+  section.top > div.texttop > button {
+    margin: 1rem 0;
+    padding: 10px 15px;
+    font-size: 1rem;
+  }
+
+  section.top > div.texttop > h1 {
+    font-size: 1.5rem;
+    /*text-align: center;*/
+  }
+
+  section.top > div.texttop > p {
+    font-size: 0.8rem;
+    /*text-align: center;*/
+  }
+
+  section.lower > h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    padding-bottom: 1rem;
+  }
 }
+
+/*
+  section.top {
+  margin-top: -2rem;
+  width: 100vw;
+  display: flex;
+  overflow: hidden;
+}
+
+section.top > img {
+  width: 30vw;
+  height: auto;
+}
+
+section.top > img.topflower {
+  position: relative;
+  top: 0;
+  left: -2rem;
+  transform: rotate(5deg);
+}
+
+section.top > img.topleaf {
+  position: relative;
+  top: 0;
+  right: -2rem;
+  transform: rotate(-15deg);
+}
+
+section.top > div.texttop {
+  max-width: 43vw;
+  align-self: center;
+  justify-self: center;
+}
+
+section.top > div.texttop > h1 {
+  font-size: 3rem;
+  font-weight: 100;
+  margin: 0;
+}
+*/
+
+/*.posters-gallery {
+    padding-bottom: 10rem;
+    padding-top: 2rem;
+    margin-top: 0;
+  }*/
