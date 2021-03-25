@@ -534,32 +534,3 @@ const addedElements = {
   frame: [],
  }
  
- 
-  
-//  function toggleOption(event) {
-//   console.group("togggle");
-//   const target = event.currentTarget;
-//   const feature = target.dataset.feature ;
-// //  flower1
-//   //Takes the state of the feature and makes it reverse aka toogle
-//   features[feature] = !features[feature];
-  
-//   //Features feature is true
-//   if (features[feature]) {
-//   // feature added
-//   // feature = flower1
-//   let featureType = feature.trim();
-//   featureType = feature.slice(0,-1);
-//   console.log(featureType);
-
-//   if(feature.featureType === true){
-  
-//     // addedElements.featureType.classList.add("hide");
-//     // addedElements.featureType = addedElements.featureType.shift();
-//     // addedElements.featureType = addedElements.featureType.push(features);
-//     // addedElements.featureType.classList.remove("hide");
-//   } else{
-//     addedElements.featureType = addedElements.featureType.push(features);
-//     addedElements.featureType.classList.remove("hide");
-//   }
-//   }}
