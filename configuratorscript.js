@@ -203,6 +203,7 @@ let shapesOnPoster = [];
 
 function addShape(shape){
   console.log(shapesOnPoster);
+  if(shapesOnPoster.length <= 4){
     shapesOnPoster.push(shape);
     shape = shape.trim();
 
@@ -220,6 +221,13 @@ function addShape(shape){
     container.appendChild(shapecontainer);
     
     console.log(shape)
+  }else{
+    alert("Too much elements")
+  }
+   
+
+
+
 }
 
 function dragElement(elmnt) {
