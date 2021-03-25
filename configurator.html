@@ -12,187 +12,254 @@
       <h1 class="site-title">Configurator</h1>
     </header>
     <main>
-<div class="introtext">
-  <h2>You can customize...</h2>
-<ul>
-  <li><p>1. Select your greens: Start by selecting your main elements, such as a flower and a background leaf.</p></li>
-  <li><p>2. Write your text: Do you want to tell something with your poster? We got you covered.</p></li>
-  <li><p>3. Drag & drop shapes: You can use different shapes to make your poster even more chic.</p></li>
-  <li><p>4. Choose a frame: You can choose from our pre-set frames, or you can also leave your poster without it. You're the creator!</p></li>
-  <li><p>5. Color it: This is where the fun starts. Color your background, and flower (petals and stem separately). Be creative!</p></li>
-</ul>
-</div>
+      <div class="actionstab">?⃝ Actions</div>
+
+      <div class="introtext hide">
+        <h2>You can customize...</h2>
+        <ul>
+          <li>
+            <p>
+              <strong>1. Select your greens:</strong> Start by selecting your main elements, such as a flower and a
+              background leaf.
+            </p>
+          </li>
+          <li>
+            <p>
+              <strong>2. Write your text:</strong> Do you want to tell something with your poster? We got you covered.
+            </p>
+          </li>
+          <li>
+            <p>
+              <strong>3. Drag & drop shapes: </strong>You can use different shapes to make your poster even more chic.
+            </p>
+          </li>
+          <li>
+            <p>
+              <strong>4. Choose a frame:</strong> You can choose from our pre-set frames, or you can also leave your
+              poster without it. You're the creator!
+            </p>
+          </li>
+          <li>
+            <p>
+              <strong>5. Color it:</strong> This is where the fun starts. Color your background, and flower (petals and
+              stem separately). Be creative!
+            </p>
+          </li>
+        </ul>
+      </div>
 
       <div class="sectionwrapper_all">
-        <div class="selection-selector">
-          
-  
-          <div class="selector" id="flower">
-            <img src="img/selectors/flower.svg" alt="flower_selector" data-feature="flower" />
-          </div>
-          <div class="selector" id="text">
-            <img src="img/selectors/text-box.svg" alt="text_selector" data-feature="text" />
-          </div>
-          <div class="selector" id="shapes">
-            <img src="img/selectors/shapes.svg" alt="shapes_selector" data-feature="shapes" />
-          </div>
+        <div class="selectionwrapper">
+          <div class="selection-selector">
+            <div class="selector" id="flower">
+              <img src="img/selectors/flower.svg" alt="flower_selector" data-feature="flower" />
+            </div>
+            <div class="selector" id="text">
+              <img src="img/selectors/text-box.svg" alt="text_selector" data-feature="text" />
+            </div>
+            <div class="selector" id="shapes">
+              <img src="img/selectors/shapes.svg" alt="shapes_selector" data-feature="shapes" />
+            </div>
 
-<div class="selector" id="frame">
-            <img src="img/selectors/frame.svg" alt="frame_selector" data-feature="frame" />
-          </div>
-                  <div class="selector" id="colors">
-            <img src="img/selectors/color-palette.svg" alt="color_selector" data-feature="colors" />
-          </div>
-        </div>
-
-        <div class="selection">
-          <div class="frame-wrapper hide">
-            <h2>Frame</h2>
-            <div class="wrapper-introtext">
-     <p>Choose a frame which fits your design the best. Or just leave it simple, without any frame.</p>
+            <div class="selector" id="frame">
+              <img src="img/selectors/frame.svg" alt="frame_selector" data-feature="frame" />
             </div>
-            <div class="frames-wrapper">
-            <div class="frame">
-              <img src="IMGs/frame1.png" alt="" class="option" data-feature="frame1" />
-            </div>
-          <div class="frame">
-              <img src="IMGs/frame2.png" alt="" class="option" data-feature="frame2" />
-            </div>
-             <div class="frame">
-              <img src="IMGs/frame3.png" alt="" class="option" data-feature="frame3" />
-            </div>
-             <div class="frame">
-              <img src="IMGs/frame4.png" alt="" class="option" data-feature="frame4" />
-            </div>
-             <div class="frame">
-              <img src="IMGs/frame5.png" alt="" class="option" data-feature="frame5" />
-            </div>
+            <div class="selector" id="colors">
+              <img src="img/selectors/color-palette.svg" alt="color_selector" data-feature="colors" />
             </div>
           </div>
 
-          <div class="color-wrapper hide">
-            <h2>Colors</h2>
-             <div class="wrapper-introtext">
-            <p>Simply select the element you want to tint and choose a color from the different color palettes. Remember: You can color: petals, stem, and background.</p>
+          <div class="selection">
+            <div class="frame-wrapper hide">
+              <h2>Frame</h2>
+              <div class="wrapper-introtext">
+                <p>Choose a frame which fits your design the best. Or just leave it simple, without any frame.</p>
+              </div>
+              <div class="frames-wrapper">
+                <div class="frame">
+                  <img src="IMGs/frame1.png" alt="" class="option" data-feature="frame1" />
+                </div>
+                <div class="frame">
+                  <img src="IMGs/frame2.png" alt="" class="option" data-feature="frame2" />
+                </div>
+                <div class="frame">
+                  <img src="IMGs/frame3.png" alt="" class="option" data-feature="frame3" />
+                </div>
+                <div class="frame">
+                  <img src="IMGs/frame4.png" alt="" class="option" data-feature="frame4" />
+                </div>
+                <div class="frame">
+                  <img src="IMGs/frame5.png" alt="" class="option" data-feature="frame5" />
+                </div>
+              </div>
             </div>
-            <h5>Background colors</h5>
-            <div class="c-color-picker js-color-picker"></div>
+
+            <div class="color-wrapper hide">
+              <h2>Colors</h2>
+              <div class="wrapper-introtext">
+                <p>
+                  Simply select the element you want to tint and choose a color from the different color palettes.
+                  Remember: You can color: petals, stem, and background.
+                </p>
+              </div>
+              <h5>Background colors</h5>
+              <div class="c-color-picker js-color-picker"></div>
               <h5>Petal colors</h5>
-            <div class="c-color-picker2 js-color-picker2"></div>
-               <h5>Stem colors</h5>
-            <div class="c-color-picker3 js-color-picker3"></div>
-          </div>
-
-          <div class="flower-wrapper">
-            <h2>Flower and leaf selector</h2>
-             <div class="wrapper-introtext">
-            <p>We believe in clean, simple and effective design. Hence you can only add one piece of flower and leaf.</p>
-           </div>
-           <h5>Flowers</h5>
-            <div class="flower-wrapper-1">
-              <span class="flower">
-                <img src="IMGs/flower1.png" alt="flower" class="option"  value="value1" id="option1" data-feature="flower1"  />
-                <p>Rose</p>
-              </span>
-              <span class="flower">
-                <img src="IMGs/flower2.png" alt="flower" class="option"  value="value1" id="option2" data-feature="flower2" />
-                <p>Daffodil</p>
-              </span>
-              <span class="flower">
-                <img src="IMGs/flower3.png" alt="flower" class="option"  value="value1" id="option3" data-feature="flower3" />
-                <p>Lily</p></span
-              >
-              <span class="flower">
-                <img src="IMGs/flower4.png" alt="flower" class="option"  value="value1" id="option4" data-feature="flower4" />
-                <p>Daisy</p></span
-              >
-              <span class="flower">
-                <img src="IMGs/flower5.png" alt="flower" class="option"  value="value1" id="option5" data-feature="flower5" />
-                <p>Dandelion</p></span
-              >
+              <div class="c-color-picker2 js-color-picker2"></div>
+              <h5>Stem colors</h5>
+              <div class="c-color-picker3 js-color-picker3"></div>
             </div>
 
-            <h5>Leaves</h5>
-            <div class="flower-wrapper-2">
-              <span class="leaf">
-                <img src="IMGs/leaf1.png" alt="leaf" class="option" data-feature="leaf1" />
-                <p>Philodendron</p>
-              </span>
-              <span class="leaf">
-                <img src="IMGs/leaf2.png" alt="leaf" class="option" data-feature="leaf2" />
-                <p>Hornbeam</p>
-              </span>
-              <span class="leaf">
-                <img src="IMGs/leaf4.png" alt="leaf" class="option" data-feature="leaf4" />
-                <p>Monstera</p>
-              </span>
+            <div class="flower-wrapper">
+              <h2>Flower and leaf selector</h2>
+              <div class="wrapper-introtext">
+                <p>
+                  We believe in clean, simple and effective design. Hence you can only add one piece of flower and leaf.
+                </p>
+              </div>
+              <h5>Flowers</h5>
+              <div class="flower-wrapper-1">
+                <span class="flower">
+                  <img
+                    src="IMGs/flower1.png"
+                    alt="flower"
+                    class="option"
+                    value="value1"
+                    id="option1"
+                    data-feature="flower1"
+                  />
+                  <p>Rose</p>
+                </span>
+                <span class="flower">
+                  <img
+                    src="IMGs/flower2.png"
+                    alt="flower"
+                    class="option"
+                    value="value1"
+                    id="option2"
+                    data-feature="flower2"
+                  />
+                  <p>Daffodil</p>
+                </span>
+                <span class="flower">
+                  <img
+                    src="IMGs/flower3.png"
+                    alt="flower"
+                    class="option"
+                    value="value1"
+                    id="option3"
+                    data-feature="flower3"
+                  />
+                  <p>Lily</p></span
+                >
+                <span class="flower">
+                  <img
+                    src="IMGs/flower4.png"
+                    alt="flower"
+                    class="option"
+                    value="value1"
+                    id="option4"
+                    data-feature="flower4"
+                  />
+                  <p>Daisy</p></span
+                >
+                <span class="flower">
+                  <img
+                    src="IMGs/flower5.png"
+                    alt="flower"
+                    class="option"
+                    value="value1"
+                    id="option5"
+                    data-feature="flower5"
+                  />
+                  <p>Dandelion</p></span
+                >
+              </div>
+
+              <h5>Leaves</h5>
+              <div class="flower-wrapper-2">
+                <span class="leaf">
+                  <img src="IMGs/leaf1.png" alt="leaf" class="option" data-feature="leaf1" />
+                  <p>Philodendron</p>
+                </span>
+                <span class="leaf">
+                  <img src="IMGs/leaf2.png" alt="leaf" class="option" data-feature="leaf2" />
+                  <p>Hornbeam</p>
+                </span>
+                <span class="leaf">
+                  <img src="IMGs/leaf4.png" alt="leaf" class="option" data-feature="leaf4" />
+                  <p>Monstera</p>
+                </span>
+              </div>
             </div>
-          </div>
-          <div class="text-wrapper hide">
-            <h2>Text</h2>
-            <div class="wrapper-introtext">
-<p>Write your headline in the box, choose a font and click 'Save'. You are always welcome to change the text or font on your poster. Experiment! And find what's best for you!</p>
-</div>           
-<label for="lText">Large text:</label>
-            <input type="text" id="lText" name="lText" />
+            <div class="text-wrapper hide">
+              <h2>Text</h2>
+              <div class="wrapper-introtext">
+                <p>
+                  Write your headline in the box, choose a font and click 'Save'. You are always welcome to change the
+                  text or font on your poster. Experiment! And find what's best for you!
+                </p>
+              </div>
+              <label for="lText">Large text:</label>
+              <input type="text" id="lText" name="lText" />
 
-            <label>Font:</label>
-            <div class="c-font-picker js-font-picker"></div>
-            <button id="font-save-button">Save</button>
-            <div id="textOutput" type="text" readonly="true"></div>
-          </div>
+              <label>Font:</label>
+              <div class="c-font-picker js-font-picker"></div>
+              <button id="font-save-button">Save</button>
+              <div id="textOutput" type="text" readonly="true"></div>
+            </div>
 
-          <div class="shape-wrapper hide">
-            <h2>Shapes</h2>
-            <div class="wrapper-introtext">
-            <p>Let's spice your poster up, drag & drop a shape to your poster!</p></div>
-            <!-- <div class="frame-1">
+            <div class="shape-wrapper hide">
+              <h2>Shapes</h2>
+              <div class="wrapper-introtext">
+                <p>Let's spice your poster up, drag & drop a shape to your poster!</p>
+              </div>
+              <!-- <div class="frame-1">
               <img src="img/small/car_gatling_gun.png" alt="gatlin_gun_feature" class="option" data-feature="gun" />
             </div>
             <div class="frame-2">
               <img src="img/small/car_gatling_gun.png" alt="gatlin_gun_feature" class="option" data-feature="gun" />
             </div> -->
+            </div>
           </div>
-        
-      </div>
-      <div class="posterSVG">
-                <img class="posterSVG_part unclickable hide" src="IMGs/frame1.png" alt="" data-feature="frame1" />
-                    <img class="posterSVG_part unclickable hide" src="IMGs/frame2.png" alt="" data-feature="frame2" />
-            <img class="posterSVG_part unclickable hide" src="IMGs/frame3.png" alt="" data-feature="frame3" />
-            <img class="posterSVG_part unclickable hide" src="IMGs/frame4.png" alt="" data-feature="frame4" />
-            <img class="posterSVG_part unclickable hide" src="IMGs/frame5.png" alt="" data-feature="frame5" />
+        </div>
+        <div class="posterSVG">
+          <img class="posterSVG_part unclickable hide" src="IMGs/frame1.png" alt="" data-feature="frame1" />
+          <img class="posterSVG_part unclickable hide" src="IMGs/frame2.png" alt="" data-feature="frame2" />
+          <img class="posterSVG_part unclickable hide" src="IMGs/frame3.png" alt="" data-feature="frame3" />
+          <img class="posterSVG_part unclickable hide" src="IMGs/frame4.png" alt="" data-feature="frame4" />
+          <img class="posterSVG_part unclickable hide" src="IMGs/frame5.png" alt="" data-feature="frame5" />
           <img class="posterSVG_part small unclickable hide" src="IMGs/leaf1.png" alt="" data-feature="leaf1" />
           <img class="posterSVG_part small unclickable hide" src="IMGs/leaf2.png" alt="" data-feature="leaf2" />
-           <img class="posterSVG_part small unclickable hide" src="IMGs/leaf4.png" alt="" data-feature="leaf4" />
-    
-        
+          <img class="posterSVG_part small unclickable hide" src="IMGs/leaf4.png" alt="" data-feature="leaf4" />
         </div>
-    </main>
 
-    <template class="t-color">
-      <div class="c-color-picker__color">
-        <div class="c-color-picker__color-inner"></div>
-      </div>
-    </template>
+        <template class="t-color">
+          <div class="c-color-picker__color">
+            <div class="c-color-picker__color-inner"></div>
+          </div>
+        </template>
 
-      <template class="t-color2">
-      <div class="c-color-picker__color2">
-        <div class="c-color-picker__color-inner2"></div>
-      </div>
-    </template>
+        <template class="t-color2">
+          <div class="c-color-picker__color2">
+            <div class="c-color-picker__color-inner2"></div>
+          </div>
+        </template>
 
         <template class="t-color3">
-      <div class="c-color-picker__color3">
-        <div class="c-color-picker__color-inner3"></div>
-      </div>
-    </template>
+          <div class="c-color-picker__color3">
+            <div class="c-color-picker__color-inner3"></div>
+          </div>
+        </template>
 
-    <template class="t-font">
-      <div class="c-font-picker__font">
-        <div class="c-font-picker__font-inner"></div>
-      </div>
-    </template>
+        <template class="t-font">
+          <div class="c-font-picker__font">
+            <div class="c-font-picker__font-inner"></div>
+          </div>
+        </template>
 
-    <script src="configuratorscript.js"></script>
+        <script src="configuratorscript.js"></script>
+      </div>
+    </main>
   </body>
 </html>

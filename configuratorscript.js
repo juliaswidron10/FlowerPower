@@ -26,6 +26,7 @@ function start() {
   color3Buttons();
   fontButtons();
   featureButtons();
+  // colorBackground();
 }
 
 async function getSVG(url) {
@@ -35,7 +36,20 @@ async function getSVG(url) {
   colorElements();
 }
 
-// .g-to-color a g-hez
+// actionstab
+document.querySelector(".actionstab").addEventListener("mouseover", actionsmodalOpen);
+
+function actionsmodalOpen() {
+  console.log("onmouse");
+  document.querySelector(".introtext").classList.remove("hide");
+}
+
+document.querySelector(".actionstab").addEventListener("mouseout", actionsmodalCloses);
+
+function actionsmodalCloses() {
+  console.log("mouseout");
+  document.querySelector(".introtext").classList.add("hide");
+}
 
 // ...MODUL SELECTOR...
 document.querySelector("#frame").addEventListener("click", showFrameModul);
@@ -121,24 +135,11 @@ function showShapesModul() {
 }
 
 const settings = {
-  colors: [
-    "#A0DEDD",
-    "#FFC9CD",
-    "#C7CFE4",
-    "#FFD5AF",
-    "#BDBEBD",
-    "#FFFCA4",
-    "#C3F6DE",
-    "#E6A2CB",
-    "#95BC95",
-    "#629594",
-    "#7D8BB1",
-    "#7B7B7B",
-  ],
+  colors: ["#A0DEDD", "#FFC9CD", "#C7CFE4", "#FFD5AF", "#BDBEBD", "#C3F6DE", "#E6A2CB", "#7D8BB1", "#7B7B7B"],
 
-  colors2: ["#629594", "#7D8BB1", "#7B7B7B"],
+  colors2: ["#FFFCA4", "#FFC9CD", "#611243", "#FF897F", "#FFB572"],
 
-  colors3: ["#A0DEDD", "#FFC9CD", "#C7CFE4", "#FFD5AF"],
+  colors3: ["#95BC95", "#629594", "#B3C4AA"],
 
   fonts: ["Arial", "Montserrat"],
 };
@@ -278,36 +279,37 @@ function colorButtons() {
     console.log(clickedColorButton.dataset.color);
     console.log("clicked button", clickedColorButton);
     const clickedColorButtonInner = clickedColorButton.querySelector(".c-color-picker__color-inner");
+    const backgroundToPaint = document.querySelector(".posterSVG_basic");
 
-    if (elementToPaint === undefined) {
-      alert("In order to color your poster, select an element first! ;)");
-    } else {
-      const start = clickedColorButtonInner.getBoundingClientRect();
-      const end = elementToPaint.getBoundingClientRect();
+    // if (elementToPaint === undefined) {
+    //   alert("In order to color your poster, select an element first! ;)");
+    // } else {
+    const start = clickedColorButtonInner.getBoundingClientRect();
+    const end = backgroundToPaint.getBoundingClientRect();
 
-      const elementHeight = end.height / 2;
-      console.log(elementHeight);
+    const elementHeight = end.height / 2;
+    console.log(elementHeight);
 
-      const elementWidth = end.width / 2;
+    const elementWidth = end.width / 2;
 
-      const diffX = end.x - start.x + elementWidth;
-      console.log(diffX);
-      const diffY = end.y - start.y + elementHeight;
-      console.log(diffY);
+    const diffX = end.x - start.x + elementWidth;
+    console.log(diffX);
+    const diffY = end.y - start.y + elementHeight;
+    console.log(diffY);
 
-      clickedColorButtonInner.style.setProperty("--diffX", diffX);
-      clickedColorButtonInner.style.setProperty("--diffY", diffY);
-      clickedColorButtonInner.classList.add("animate-color-in");
+    clickedColorButtonInner.style.setProperty("--diffX", diffX);
+    clickedColorButtonInner.style.setProperty("--diffY", diffY);
+    clickedColorButtonInner.classList.add("animate-color-in");
 
-      clickedColorButtonInner.addEventListener("animationend", animateColor);
-      // TODO:
-      // document.querySelector(".c-color-picker__color").classList.add("animate-color-scale");
+    clickedColorButtonInner.addEventListener("animationend", animateColor);
+    // TODO:
+    // document.querySelector(".c-color-picker__color").classList.add("animate-color-scale");
 
-      function animateColor() {
-        clickedColorButtonInner.classList.remove("animate-color-in");
-        clickedColorButtonInner.removeEventListener("animationend", animateColor);
-        elementToPaint.style.fill = clickedColorButton.dataset.color;
-      }
+    function animateColor() {
+      clickedColorButtonInner.classList.remove("animate-color-in");
+      clickedColorButtonInner.removeEventListener("animationend", animateColor);
+      backgroundToPaint.style.fill = clickedColorButton.dataset.color;
+      // }
     }
 
     settings.pickedColor = clickedColorButton.dataset.color;
@@ -321,15 +323,21 @@ function colorButtons() {
   }
 }
 
+// function colorBackground() {
+// console.log("colorbackground");
+// }
+
 // coloring
 function colorElements() {
+  console.log("colorelement");
   const groups = document.querySelectorAll(".g-to-color");
-  console.log(groups);
+  // console.log(groups);
   groups.forEach((group) => {
     group.addEventListener("click", storeElement);
     // group.style.fill = "#fff";
 
     function storeElement() {
+      console.log("storeelemnet");
       groups.forEach((group) => {
         group.classList.remove("g-to-color_active");
       });
@@ -544,47 +552,84 @@ function featureButtons() {
   document.querySelectorAll(".option").forEach((option) => option.addEventListener("click", toggleOption));
 }
 
-//exclusive choice attempt, but not working
-let pickedElements = {
-  flower: [],
-  leaf: [],
-  frame: [],
-};
+// exclusive choice attempt, but not working
+// let pickedElements = {
+//   flower: [],
+//   leaf: [],
+//   frame: [],
+// };
 
+// function toggleOption(event) {
+//   console.group("togggle");
+//   const target = event.currentTarget;
+//   const feature = target.dataset.feature;
+//   // flower1
+//   //Takes the state of the feature and makes it reverse aka toogle
+//   features[feature] = !features[feature];
+
+//   //Features feature is true
+//   if (features[feature]) {
+//     // feature added
+//     // feature = flower1;
+//     let feature = features[feature];
+//     let featureType = feature.slice(0, -1); //flower
+//     if (pickedElements.featureType.length() === 1) {
+//       pickedElements.featureType.classList.add("hide");
+//       pickedElements.featureType = pickedElements.featureType.shift();
+//       pickedElements.featureType = pickedElements.featureType.push(features);
+//       pickedElements.featureType.classList.remove("hide");
+//     } else {
+//       pickedElements.featureType = pickedElements.featureType.push(features);
+//       pickedElements.featureType.classList.remove("hide");
+//     }
+//   }
+// }
+
+// //this works but without the exclusive choice
 function toggleOption(event) {
   console.group("togggle");
   const target = event.currentTarget;
   const feature = target.dataset.feature;
-  // flower1
+
   //Takes the state of the feature and makes it reverse aka toogle
   features[feature] = !features[feature];
 
   //Features feature is true
   if (features[feature]) {
     // feature added
-    // feature = flower1;
-    let feature = features[feature];
-    let featureType = feature.slice(0, -1); //flower
-    if (pickedElements.featureType.length() === 1) {
-      pickedElements.featureType.classList.add("hide");
-      pickedElements.featureType = pickedElements.featureType.shift();
-      pickedElements.featureType = pickedElements.featureType.push(features);
-      pickedElements.featureType.classList.remove("hide");
-    } else {
-      pickedElements.featureType = pickedElements.featureType.push(features);
-      pickedElements.featureType.classList.remove("hide");
-    }
+    console.log(`Feature ${feature} is turned on!`);
+
+    // If feature is (now) turned on:
+    target.parentElement.classList.add("chosen");
+
+    // - un-hide the feature-layer(s) in the #product-preview;
+    console.log(`.posterSVG [data-feature=${feature}]`);
+    document.querySelector(`.posterSVG [data-feature=${feature}]`).classList.remove("hide");
+  } else {
+    // feature removed
+    console.log(`Feature ${feature} is turned off!`);
+
+    // Else - if the feature (became) turned off:
+    // - no longer mark target as chosen
+    target.parentElement.classList.remove("chosen");
+    // - hide the feature-layer(s) in the #product-preview
+    document.querySelector(`.posterSVG [data-feature=${feature}]`).classList.add("hide");
   }
 }
 
-// //this works but without the exclusive choice
+// // 3rd attempt
 // function toggleOption(event) {
 //   console.group("togggle");
 //   const target = event.currentTarget;
+//   const featureCategory = target.dataset.type;
 //   const feature = target.dataset.feature;
 
 //   //Takes the state of the feature and makes it reverse aka toogle
 //   features[feature] = !features[feature];
+
+//   //identifies svg-parts, by matching datasets
+//   const posterCategory = document.querySelectorAll(`.posterSVG [data-type=${optionCategory}]`);
+//   const posterPart = document.querySelector(`.posterSVG [data-name=${option}]`);
 
 //   //Features feature is true
 //   if (features[feature]) {

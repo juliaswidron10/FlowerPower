@@ -43,7 +43,7 @@ p {
 
 .site-header {
   /* background-color: var(--component-color); */
-  border-bottom: 1px solid #e9e9e9;
+  /* border-bottom: 1px solid #e9e9e9; */
 }
 
 .site-title {
@@ -55,7 +55,11 @@ p {
 h2 {
   margin-bottom: 1rem;
   font-family: var(--headline-font);
-  font-family: 1.5vw;
+  font-size: 2vw;
+}
+
+.introtext h2 {
+  font-size: 1.5vw;
 }
 
 h5 {
@@ -100,11 +104,21 @@ h5 {
   flex-wrap: wrap;
 }
 
+.selectionwrapper {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  margin-right: 5vw;
+  margin-top: 2rem;
+
+  padding: 1.5vw;
+  border-radius: 2rem;
+}
+
 .selection {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid #e9e9e9;
-  padding-right: 5vw;
+  /* padding-right: 5vw; */
 }
 
 .color-wrapper,
@@ -114,25 +128,44 @@ h5 {
 .shape-wrapper {
   /* border-bottom: 1px solid #e9e9e9; */
   background-color: white;
-  margin-top: 2rem;
-  padding: 1.5rem;
+  /* margin-top: 2rem; */
+  padding: 1.8vw;
   border-radius: 2rem;
   width: 30vw;
 }
 
+.actionstab {
+  float: right;
+}
+
 .introtext {
-  background-color: white;
+  position: absolute;
+  background-color: #f2dabeb6;
   padding: 1.5rem;
+  margin-top: 5rem;
+  margin-right: 2rem;
   border-radius: 2rem;
+
+  width: 40vw;
+  text-align: left;
+  position: absolute;
+  right: 2vw;
+  top: 4vw;
+  z-index: 100;
+}
+
+.introtext p {
+  font-size: 1vw;
 }
 
 .wrapper-introtext p {
-  font-size: 1.3vw;
+  font-size: 1vw;
   margin-bottom: 15px;
 }
 
 .selection-selector {
-  padding: 2rem 2rem 2rem 0;
+  /* padding: 2rem 2rem 2rem 0; */
+  padding-right: 2rem;
 }
 
 /* COLOR PICKER CSS */
@@ -154,8 +187,8 @@ h5 {
   /* border-radius: 50%; */
   background-color: #fff;
   cursor: pointer;
-  height: 54px;
-  width: 54px;
+  height: 4vw;
+  width: 4vw;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -168,8 +201,8 @@ h5 {
 .c-color-picker__color-inner2,
 .c-color-picker__color-inner3,
 .c-font-picker__font-inner {
-  height: 54px;
-  width: 54px;
+  height: 2.5vw;
+  width: 2.5vw;
   /* border-radius: 50%; */
   border: 1px solid #d9d9d9;
   transition: transform 0.3s ease-in-out;
@@ -264,7 +297,7 @@ h5 {
 .g-to-color_active {
   stroke: rgb(0, 0, 0);
   stroke-width: 5px;
-  filter: brightness(0.5);
+  /* filter: brightness(0.5); */
 
   /* stroke-dasharray: 2000; */
   /* stroke-dashoffset: 2000; */
@@ -283,7 +316,7 @@ h5 {
 
 /* FEATURE CSS */
 .chosen {
-  background-color: grey;
+  background-color: rgb(233, 233, 233);
 }
 
 .hide {
@@ -313,15 +346,15 @@ h5 {
 /*------------ALEX CODE--------------*/
 
 .selector {
-  height: 70px;
-  width: 70px;
+  height: 5vw;
+  width: 5vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 10px;
   /* padding: 6px; */
-  /* border: 1px solid #d9d9d9; */
+  border: 1px solid #eeeeee;
   border-radius: 50%;
   background-color: #fff;
   cursor: pointer;
@@ -332,8 +365,8 @@ h5 {
   /* border: 1px solid #d9d9d9; */
   padding: 6px;
   display: block;
-  height: 54px;
-  width: 54px;
+  height: 4vw;
+  width: 4vw;
   margin: 0 auto;
   /* border-radius: 50%; */
 }
@@ -346,8 +379,8 @@ h5 {
 .flower,
 .leaf,
 .frame {
-  /* width: 5vw; */
-  /* height: auto; */
+  width: 4vw;
+  height: 4vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -356,7 +389,8 @@ h5 {
 .leaf img,
 .flower img,
 .frame img {
-  width: 5vw;
+  padding: 6px;
+  width: 3vw;
   height: auto;
   /* margin-right: 20px; */
 }
@@ -424,4 +458,41 @@ h5 {
 ul {
   list-style: none;
   line-height: 1.7;
+}
+
+/* //background color cycle .animate-color-in */
+body {
+  animation: colorchange 60s linear 1s infinite; /* animation-name followed by duration in seconds*/
+  /* you could also use milliseconds (ms) or something like 2.5s */
+  -webkit-animation: colorchange 60s linear 0s infinite alternate; /* Chrome and Safari */
+}
+
+@keyframes colorchange {
+  0% {
+    background: #e6e6e6;
+  }
+  33% {
+    background: #f2dabe;
+  }
+  66% {
+    background: #d3e9d1;
+  }
+  100% {
+    background: #e6e6e6;
+  }
+}
+
+@-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */ {
+  0% {
+    background: #e6e6e6;
+  }
+  33% {
+    background: #f2dabe;
+  }
+  66% {
+    background: #d3e9d1;
+  }
+  100% {
+    background: #e6e6e6;
+  }
 }
