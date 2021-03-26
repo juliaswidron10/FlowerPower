@@ -1,0 +1,363 @@
+/**** from Julia's code ****/
+
+:root {
+  --main-font: montserrat, sans-serif;
+  --main-color: #e6e6e6;
+  --secondary-color: #505050;
+  --pink: ##ffccce;
+}
+
+body {
+  font-family: var(--main-font);
+  color: var(--secondary-color);
+  margin: 0;
+  padding: 0;
+  background-color: var(--main-color);
+}
+
+nav {
+  display: flex;
+  width: 90%;
+  padding: 2rem 4rem 0 4rem;
+  align-items: center;
+  overflow: hidden;
+}
+
+nav > h1 {
+  font-size: 2rem;
+}
+
+nav > ol {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin-left: auto;
+  /* margin-right: 5rem; */
+}
+
+nav > ol > li {
+  padding: 0 20px;
+}
+
+nav > ol > li > a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+/**** end of Julia's code ****/
+
+.intro-inspired {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 5vw;
+  display: flex;
+  grid-gap: 4vw;
+}
+
+.mockup-inspired {
+  width: 40vw;
+  height: auto;
+  margin-left: 4vw;
+}
+
+.text-inspired {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+}
+
+img {
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+  color: var(--main-color);
+}
+
+button {
+  border: none;
+  background-color: var(--secondary-color);
+  color: var(--main-color);
+  border-radius: 0;
+  margin: 2rem 0;
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 1.3vw 2vw;
+  width: fit-content;
+  margin-top: 1.5vw;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+section.intro-inspired > div.text-inspired > h1 {
+  font-size: 3rem;
+  font-weight: 100;
+  margin: 0;
+}
+
+p {
+  line-height: 1.5rem;
+  margin-top: 1rem;
+}
+
+.posters-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+section.posters-wrapper > h1 {
+  font-size: 3rem;
+  font-weight: 100;
+  margin-top: 5rem;
+  align-self: center;
+}
+
+/* POSTER ELEMENTS POSITIONING */
+.posters-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10rem;
+  padding-bottom: 10rem;
+  padding-top: 5rem;
+}
+
+.leaf1,
+.flower1,
+.text1,
+.date1,
+.shapes1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 380px;
+  height: auto;
+}
+
+.poster1-wrapper {
+  position: relative;
+}
+
+.leaf2,
+.flower2,
+.text2,
+.date2,
+.shapes2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 380px;
+  height: auto;
+}
+
+.poster2-wrapper {
+  position: relative;
+}
+
+.leaf3,
+.flower3,
+.text3,
+.date3,
+.shapes3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 380px;
+  height: auto;
+}
+
+.poster3-wrapper {
+  position: relative;
+}
+
+.leaf4,
+.flower4,
+.text4,
+.date4,
+.shapes4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 380px;
+  height: auto;
+}
+
+.poster4-wrapper {
+  position: relative;
+}
+
+.leaf5,
+.flower5,
+.text5,
+.date5,
+.shapes5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 380px;
+  height: auto;
+}
+
+.poster5-wrapper {
+  position: relative;
+}
+
+.leaf-position {
+  top: 4rem;
+  left: -1rem;
+  width: 400px;
+  height: auto;
+  z-index: 1;
+}
+
+.flower-position {
+  top: 2rem;
+  left: 3rem;
+  width: 280px;
+  height: auto;
+  z-index: 2;
+}
+
+.text-position {
+  top: 19rem;
+  left: 2.5rem;
+  width: 300px;
+  height: auto;
+  z-index: 3;
+}
+
+.date-position {
+  top: 1rem;
+  left: 18rem;
+  width: 65px;
+  height: auto;
+  z-index: 4;
+}
+
+.shapes-position {
+  top: 1rem;
+  left: 1rem;
+  width: 340px;
+  height: auto;
+  z-index: 5;
+}
+
+.bg-position {
+  width: 380px;
+  height: auto;
+  z-index: 0;
+}
+
+.frame1 {
+  position: absolute;
+  top: -2rem;
+  left: -2rem;
+  width: 445px;
+  height: auto;
+  z-index: -1;
+}
+
+.frame2 {
+  position: absolute;
+  top: -3rem;
+  left: -3rem;
+  width: 475px;
+  height: auto;
+  z-index: -1;
+}
+
+.frame3 {
+  position: absolute;
+  top: -2.2rem;
+  left: -2.3rem;
+  width: 456px;
+  height: auto;
+  z-index: -1;
+}
+
+.frame4 {
+  position: absolute;
+  top: -1.3rem;
+  left: -1.2rem;
+  width: 420px;
+  height: auto;
+  z-index: -1;
+}
+
+.frame5 {
+  position: absolute;
+  top: -3.5rem;
+  left: -3.5rem;
+  width: 492px;
+  height: auto;
+  z-index: -1;
+}
+
+/* MOBILE VERSION */
+
+@media only screen and (max-width: 500px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  nav > ol {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+  }
+
+  .intro-inspired {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: column-reverse;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .mockup-inspired {
+    width: 80vw;
+    height: auto;
+    margin-top: 4vw;
+  }
+
+  .text-inspired {
+    text-align: center;
+  }
+
+  button {
+    align-self: center;
+    font-size: 3vw;
+    width: 30vw;
+    padding: 2.5vw;
+    margin-top: 1vw;
+  }
+
+  section.intro-inspired > div.text-inspired > h1 {
+    font-size: 2rem;
+  }
+
+  section.posters-wrapper > h1 {
+    font-size: 2rem;
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+
+  .posters-gallery {
+    padding-bottom: 10rem;
+    padding-top: 2rem;
+    margin-top: 0;
+  }
+}
