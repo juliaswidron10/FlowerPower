@@ -406,6 +406,10 @@ section.posters-wrapper > h1 {
   }
 }
 
+img {
+  object-fit: cover;
+}
+
 /*
 nav {
   display: flex;
