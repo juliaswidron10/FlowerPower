@@ -95,18 +95,26 @@ section.top > div.texttop > button {
   cursor: pointer;
 }
 
-/*Styling the configuratoe*/
+button:hover {
+  opacity: 0.8;
+}
+
+a {
+  text-decoration: none;
+  color: var(--main-color);
+}
+
+/*Styling the configurator*/
+
 section.lower {
   justify-items: center;
   display: grid;
 }
 section.lower > h1 {
-  /*justify-self: left;
-  padding-left: 8rem;*/
   justify-self: center;
   padding-top: 4rem;
   font-weight: 200;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 div.cofig {
   display: grid;
@@ -131,7 +139,6 @@ div.cofig > img.frame {
   grid-area: 1 / 1 / -1/ -1;
   align-self: center;
   justify-self: center;
-  /*z-index: -1;*/
   position: relative;
 }
 
@@ -144,12 +151,6 @@ div.iconsconf {
   max-width: 140px;
   max-height: 4.5rem;
 }
-
-/*
-div#flowertype.iconsconf > h1 {
-  margin-bottom: 3rem;
-}
-*/
 
 #frametype {
   grid-area: 1/1 / span 1 / span 1;
@@ -274,7 +275,6 @@ img {
 
   section.top {
     margin-top: 15vw;
-    /*width: 90vw;*/
     display: flex;
     overflow: hidden;
     align-items: center;
@@ -287,15 +287,15 @@ img {
   }
 
   section.top > img.topflower {
-    top: 10rem;
+    top: 12rem;
     left: -3.5rem;
     position: absolute;
     z-index: -1;
   }
 
   section.top > img.topleaf {
-    top: 12rem;
-    right: -1rem;
+    top: 14rem;
+    right: -2rem;
     position: absolute;
     z-index: -1;
   }
@@ -313,17 +313,18 @@ img {
   }
 
   section.top > div.texttop > h1 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     /*text-align: center;*/
   }
 
   section.top > div.texttop > p {
     font-size: 0.8rem;
     /*text-align: center;*/
+    line-height: 1rem;
   }
 
   section.lower > h1 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     text-align: center;
     padding-bottom: 1rem;
     padding-top: 5rem;
