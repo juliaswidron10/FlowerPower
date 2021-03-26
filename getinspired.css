@@ -99,6 +99,11 @@ section.intro-inspired > div.text-inspired > h1 {
   margin: 0;
 }
 
+p {
+  line-height: 1.5rem;
+  margin-top: 1rem;
+}
+
 .posters-wrapper {
   display: flex;
   flex-direction: column;
