@@ -19,6 +19,8 @@ nav {
   display: flex;
   width: 90%;
   padding: 2rem 4rem 0 4rem;
+  align-items: center;
+  overflow: hidden;
 }
 
 nav > h1 {
@@ -44,32 +46,6 @@ nav > ol > li > a {
 }
 /**** end of Julia's code ****/
 
-/*.intro-inspired {
-  margin-top: 1rem;
-  display: flex;
-  align-items: center;
-}
-
-.mockup-inspired {
-  width: 700px;
-  height: auto;
-}
-
-.text-inspired {
-  padding: 4rem;
-}
-
-button {
-  border: none;
-  background-color: var(--secondary-color);
-  color: var(--main-color);
-  border-radius: 0;
-  margin: 2rem 0;
-  padding: 10px 15px;
-  font-size: 1.4rem;
-}
-*/
-
 .intro-inspired {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -91,18 +67,30 @@ button {
   justify-content: center;
 }
 
+img {
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+  color: var(--main-color);
+}
+
 button {
   border: none;
   background-color: var(--secondary-color);
   color: var(--main-color);
   border-radius: 0;
   margin: 2rem 0;
-  /*padding: 10px 15px;*/
   font-size: 1.4rem;
   cursor: pointer;
   padding: 1.3vw 2vw;
   width: fit-content;
   margin-top: 1.5vw;
+}
+
+button:hover {
+  opacity: 0.8;
 }
 
 section.intro-inspired > div.text-inspired > h1 {
@@ -259,14 +247,6 @@ section.posters-wrapper > h1 {
   z-index: 0;
 }
 
-/*.frame-position {
-  top: -2rem;
-  left: -2rem;
-  width: 440px;
-  height: auto;
-  z-index: -1;
-}*/
-
 .frame1 {
   position: absolute;
   top: -2rem;
@@ -312,35 +292,9 @@ section.posters-wrapper > h1 {
   z-index: -1;
 }
 
-/*
-.hidden {
-  display: none;
-}
-*/
+/* MOBILE VERSION */
 
 @media only screen and (max-width: 500px) {
-  /*
-      header nav {
-        display: grid;
-        grid-template-columns: 1fr;
-    }
-
-    header nav ul {
-        display: grid;
-        grid-template-columns: 1fr;
-        font-size: 2.3vw;
-        margin-bottom: 1vw;
-        padding: 0px;
-    }
-
-    .logo {
-        display: flex;
-        width: 50%;
-        height: auto;
-        margin: 0 40% 0% 25%;
-    }
-    */
-
   nav {
     display: flex;
     flex-direction: column;
@@ -354,7 +308,6 @@ section.posters-wrapper > h1 {
     display: flex;
     flex-direction: column;
     list-style: none;
-    /*margin-left: auto;*/
     padding: 0;
     margin: 0;
     align-items: center;
@@ -372,9 +325,7 @@ section.posters-wrapper > h1 {
   .mockup-inspired {
     width: 80vw;
     height: auto;
-    /*margin: 0;*/
     margin-top: 4vw;
-    /*margin-left: 5vw;*/
   }
 
   .text-inspired {
@@ -383,7 +334,7 @@ section.posters-wrapper > h1 {
 
   button {
     align-self: center;
-    font-size: 2.3vw;
+    font-size: 3vw;
     width: 30vw;
     padding: 2.5vw;
     margin-top: 1vw;
@@ -405,30 +356,3 @@ section.posters-wrapper > h1 {
     margin-top: 0;
   }
 }
-
-img {
-  object-fit: cover;
-}
-
-/*
-nav {
-  display: flex;
-  width: 90%;
-  padding: 2rem 4rem 0 4rem;
-}
-
-nav > h1 {
-  font-size: 2rem;
-}
-
-nav > ol {
-  display: flex;
-  flex-direction: row;
-  list-style: none;
-  margin-left: auto;
-}
-
-nav > ol > li {
-  padding: 0 20px;
-}
-*/
